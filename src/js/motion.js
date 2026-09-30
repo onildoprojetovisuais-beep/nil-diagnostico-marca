@@ -36,6 +36,14 @@ function parallax(amt) {
   });
 }
 
+/* destaques em serifada itálica (.hl): o bloco pai ganha .is-in ao entrar; o CSS desenha o pincel/círculo.
+   Gatilho no bloco (não no span) porque o SplitText refaz o DOM das linhas ao redimensionar. */
+function marks() {
+  new Set($$('.hl').map((h) => h.closest('h1, h2, h3, p'))).forEach((b) => {
+    if (b) ST.create({ trigger: b, start: 'top 88%', once: true, onEnter: () => b.classList.add('is-in') });
+  });
+}
+
 function progressBar() {
   const bar = $('#read-progress'); if (!bar) return;
   gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.2 } });
@@ -136,6 +144,7 @@ function init() {
     sinais(desktop);
     provas(desktop);
     reveals();
+    marks();
     parallax(desktop ? 6 : 3);
     sobre(desktop);
     formCta();

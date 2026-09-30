@@ -3,3 +3,6 @@ dist
 assets/
 _planning/
 .env*
+
+.vercel
+.env*

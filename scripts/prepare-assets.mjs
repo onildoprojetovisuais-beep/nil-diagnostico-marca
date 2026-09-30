@@ -53,7 +53,7 @@ for (const f of ['logo-white-480.webp', 'logo-white-960.webp']) cp(A('brand', f)
 // Fontes (latin, variáveis, woff2) vindas do npm
 const fontMap = {
   'inter-latin-wght-normal.woff2': '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2',
-  'fraunces-latin-wght-italic.woff2': '@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2',
+  'libre-baskerville-latin-400-italic.woff2': '@fontsource/libre-baskerville/files/libre-baskerville-latin-400-italic.woff2',
   'jetbrains-mono-latin-wght-normal.woff2': '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2',
 };
 for (const [n, s] of Object.entries(fontMap)) cp(path.join(root, 'node_modules', s), P('fonts', n));
