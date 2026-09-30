@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Espaço reservado: Códigos da Família, imagem 03">
+<defs><pattern id="t" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M0 48L48 0" stroke="#F1F2EE" stroke-opacity=".035" stroke-width="2.16"/></pattern></defs>
+<rect width="900" height="1200" fill="#1A1C1F"/>
+<rect width="900" height="1200" fill="url(#t)"/>
+<g fill="none" stroke="#A8ADB2" stroke-opacity=".6" stroke-width="3.024"><path d="M36 96V36H96"/><path d="M864 96V36H804"/><path d="M36 1104V1164H96"/><path d="M864 1104V1164H804"/></g>
+<g font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" text-anchor="middle" fill="#A8ADB2">
+<text x="450" y="588.48" font-size="19.200000000000003" letter-spacing="2.3040000000000003">[ 03 — CÓDIGOS DA FAMÍLIA ]</text>
+<rect x="414" y="603.84" width="72" height="4.32" fill="#C94B3F"/>
+<text x="450" y="633.48" font-size="15.600000000000001" letter-spacing="2.8080000000000003">IMAGEM 03</text>
+</g>
+</svg>

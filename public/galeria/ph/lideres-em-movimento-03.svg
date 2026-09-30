@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000" role="img" aria-label="Espaço reservado: Líderes em Movimento, imagem 03">
+<defs><pattern id="t" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 60L60 0" stroke="#F1F2EE" stroke-opacity=".035" stroke-width="2.6999999999999997"/></pattern></defs>
+<rect width="1500" height="1000" fill="#1A1C1F"/>
+<rect width="1500" height="1000" fill="url(#t)"/>
+<g fill="none" stroke="#A8ADB2" stroke-opacity=".6" stroke-width="3.7799999999999994"><path d="M45 120V45H120"/><path d="M1455 120V45H1380"/><path d="M45 880V955H120"/><path d="M1455 880V955H1380"/></g>
+<g font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" text-anchor="middle" fill="#A8ADB2">
+<text x="750" y="485.6" font-size="24" letter-spacing="2.88">[ 03 — LÍDERES EM MOVIMENTO ]</text>
+<rect x="705" y="504.8" width="90" height="5.3999999999999995" fill="#C94B3F"/>
+<text x="750" y="541.85" font-size="19.5" letter-spacing="3.51">IMAGEM 03</text>
+</g>
+</svg>

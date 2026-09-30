@@ -1,15 +1,22 @@
 import './css/base.css';
 import './css/sections.css';
 import './css/motion.css';
+import './css/galeria.css';
+import './css/galeria-motion.css';
+import './css/galeria-lightbox.css';
 import { pageView, loadProviders } from './js/track.js';
 import { initCta } from './js/cta.js';
 import { initForm } from './js/form.js';
 import { initVideos } from './js/media.js';
+import { initSinais } from './js/sinais.js';
+import { initGaleria } from './js/galeria.js';
 
 pageView();
 initCta();
 initForm();
 initVideos();
+initSinais();
+initGaleria();
 
 // GSAP/ScrollTrigger + trackers de terceiros: fora do caminho crítico (depois de load + idle)
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;

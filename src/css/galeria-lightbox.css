@@ -1,0 +1,49 @@
+/* Lightbox da galeria (seção 04). Só transform/opacity nas animações. */
+.lb { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; overflow: hidden;
+  background: rgba(11, 12, 13, .96); color: var(--gelo); overscroll-behavior: contain; }
+.lb:not([open]) { display: none; }
+.lb::backdrop { background: rgba(11, 12, 13, .96); }
+.lb__grain { position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.lb__inner { position: relative; height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: 0 var(--gutter) max(12px, env(safe-area-inset-bottom)); }
+.lb__top { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 16px; min-height: 64px; padding-top: max(8px, env(safe-area-inset-top)); }
+.lb__proj { color: var(--cinza); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb__count { color: var(--cinza); font-variant-numeric: tabular-nums; }
+.lb__count b { color: var(--oxido-txt-escuro); font-weight: 700; }
+.lb__btn { display: inline-grid; place-items: center; width: 48px; height: 48px; padding: 0; border-radius: 50%; cursor: pointer;
+  border: 1px solid color-mix(in srgb, var(--gelo) 28%, transparent); background: rgba(17, 18, 20, .6); color: var(--gelo);
+  transition: background var(--dur-fast), border-color var(--dur-fast), transform var(--dur-fast); -webkit-tap-highlight-color: transparent; }
+.lb__btn:hover { border-color: var(--oxido); background: color-mix(in srgb, var(--oxido) 22%, var(--grafite)); }
+.lb__btn:active { transform: scale(.94); }
+.lb__btn:focus-visible { outline: var(--traco) solid var(--oxido); outline-offset: 3px; }
+.lb__btn[hidden] { display: none; }
+
+/* mobile: mídia em cima; anterior / legenda / próxima em barra abaixo, fora da imagem */
+.lb__body { min-height: 0; display: grid; grid-template-columns: 48px minmax(0, 1fr) 48px; grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas: "media media media" "prev cap next"; gap: 12px; align-items: center; }
+.lb__media { grid-area: media; min-width: 0; min-height: 0; height: 100%; display: grid; place-items: center; touch-action: pan-y pinch-zoom; user-select: none; -webkit-user-select: none; }
+.lb__media picture { display: block; width: 100%; height: 100%; }
+.lb__media img, .lb__media video { display: block; width: 100%; height: 100%; object-fit: contain; -webkit-user-drag: none; }
+.lb__media video { background: #000; }
+.lb__cap { grid-area: cap; text-align: center; color: var(--cinza); }
+.lb__prev { grid-area: prev; }
+.lb__next { grid-area: next; }
+.lb__thumbs { display: none; }
+.lb__pre, .lb__live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.lb__pre { visibility: hidden; }
+
+@media (min-width: 900px) {
+  .lb__inner { padding-inline: max(var(--gutter), 24px); }
+  .lb__body { grid-template-columns: 56px minmax(0, 1fr) 56px; grid-template-areas: "prev media next" ". cap ."; gap: 12px 24px; }
+  .lb__btn { width: 56px; height: 56px; }
+  .lb__prev, .lb__next { align-self: center; justify-self: center; }
+  .lb__thumbs { display: flex; justify-content: center; gap: 8px; padding: 14px 0 6px; overflow-x: auto; scrollbar-width: none; }
+  .lb__thumbs::-webkit-scrollbar { display: none; }
+  .lb__thumb { flex: none; width: 64px; height: 44px; padding: 0; border: 1px solid transparent; background: var(--grafite-2); cursor: pointer; opacity: .5; transition: opacity var(--dur-fast), border-color var(--dur-fast); }
+  .lb__thumb:hover { opacity: .85; }
+  .lb__thumb[aria-current] { opacity: 1; border-color: var(--oxido); }
+  .lb__thumb:focus-visible { outline: var(--traco) solid var(--oxido); outline-offset: 2px; opacity: 1; }
+  .lb__thumb picture, .lb__thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+}
+@media (prefers-reduced-motion: reduce) { .lb__btn, .lb__thumb { transition: none; } }
+.lb__media video { filter: grayscale(1) contrast(1.1); }

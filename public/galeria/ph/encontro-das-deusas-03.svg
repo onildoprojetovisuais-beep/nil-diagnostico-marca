@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900" role="img" aria-label="Espaço reservado: Encontro das Deusas, imagem 03">
+<defs><pattern id="t" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M0 56L56 0" stroke="#F1F2EE" stroke-opacity=".035" stroke-width="2.52"/></pattern></defs>
+<rect width="1400" height="900" fill="#1A1C1F"/>
+<rect width="1400" height="900" fill="url(#t)"/>
+<g fill="none" stroke="#A8ADB2" stroke-opacity=".6" stroke-width="3.5279999999999996"><path d="M42 112V42H112"/><path d="M1358 112V42H1288"/><path d="M42 788V858H112"/><path d="M1358 788V858H1288"/></g>
+<g font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" text-anchor="middle" fill="#A8ADB2">
+<text x="700" y="436.56" font-size="22.400000000000002" letter-spacing="2.688">[ 03 — ENCONTRO DAS DEUSAS ]</text>
+<rect x="658" y="454.48" width="84" height="5.04" fill="#C94B3F"/>
+<text x="700" y="489.06" font-size="18.2" letter-spacing="3.276">IMAGEM 03</text>
+</g>
+</svg>

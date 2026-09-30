@@ -3,21 +3,23 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import { pathToFileURL } from 'url';
+import { makePlaceholders } from './make-placeholders.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const A = (...p) => path.join(root, 'assets', ...p);
 const P = (...p) => path.join(root, 'public', ...p);
 const manifest = JSON.parse(fs.readFileSync(A('manifest.json'), 'utf8'));
 
-export const USED_IMAGES = [
+// Imagens/vídeos da galeria vêm de src/data/cases.js (fonte única); a lista abaixo cobre o que é usado fora dela.
+const { CASES } = await import(pathToFileURL(path.join(root, 'src/data/cases.js')).href);
+const EXTRA_IMAGES = [
   'nil-hero-estudio-tablet', 'nil-frontal-poltrona', 'nil-hero-luz-dramatica', 'jaque-retrato-luz',
   'nil-cartazes-feminino-moderno',
-  'armi-brasao-backdrop-luz', 'armi-brasao-esboco-mao', 'armi-mesa-evento',
-  'fm-cartazes-close-novo-sempre-melhor', 'fm-cartazes-jardim-noite', 'fm-sonho-ancestrais-painel',
-  'escola-vestir-backdrop-evento', 'codigos-familia-palco',
-  'armi-espaco-brasao-parede', 'fm-parede-verde-cartazes-o', 'armi-caderno-dourado', 'codigos-familia-kit-caixa', 'escola-vestir-rollups',
 ];
-const USED_VIDEOS = ['armi-brasao-maria', 'armi-pessoas-certas-rodrigao', 'armi-telao-casa-mariadel'];
+const galItems = CASES.flatMap((c) => c.items);
+export const USED_IMAGES = [...new Set([...EXTRA_IMAGES, ...galItems.filter((i) => i.kind === 'img').map((i) => i.id)])];
+const USED_VIDEOS = [...new Set(galItems.filter((i) => i.kind === 'video').map((i) => i.id))];
 const MAXW = 1200;
 
 const mk = (d) => fs.mkdirSync(d, { recursive: true });
@@ -82,4 +84,5 @@ await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#111
   .jpeg({ quality: 82, mozjpeg: true }).toFile(og);
 bytes += fs.statSync(og).size;
 
-console.log(`public/ pronto. ${(bytes / 1024 / 1024).toFixed(1)} MB copiados/gerados.`);
+const nph = await makePlaceholders();
+console.log(`public/ pronto (${nph} placeholders). ${(bytes / 1024 / 1024).toFixed(1)} MB copiados/gerados.`);

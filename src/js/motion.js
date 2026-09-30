@@ -58,6 +58,8 @@ function hero(desktop) {
 /* 02: título em linhas, trilho vermelho por eixo (scrub), eixo ativo (desktop) */
 function diagnostico(desktop) {
   const axes = $$('#diag .axis');
+  // acordeão muda a altura da página: recalcula os gatilhos depois de abrir/fechar
+  $$('#diag .axis__d').forEach((d) => d.addEventListener('toggle', () => ST.refresh()));
   axes.forEach((ax) => {
     const ln = $('[data-axis-line]', ax);
     if (ln) gsap.fromTo(ln, { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: ax, start: 'top 75%', end: 'bottom 55%', scrub: true } });
@@ -68,41 +70,6 @@ function diagnostico(desktop) {
     axes.forEach((ax) => ST.create({ trigger: ax, start: 'top 58%', end: 'bottom 58%',
       onToggle: (s) => ax.classList.toggle('is-active', s.isActive) }));
   }
-}
-
-/* 03: cada sinal: linha, título, corpo, numeral (contorno -> preenchido) */
-function sinais(desktop) {
-  const idx = $$('#sinais-idx li'), idxWrap = $('#sinais-idx');
-  $$('#sinais .sinal').forEach((s, i) => {
-    const num = $('[data-num]', s), line = $('[data-sline]', s), title = $('[data-stitle]', s), body = $$('[data-sbody]', s);
-    const tl = gsap.timeline({ scrollTrigger: { trigger: s, start: 'top 68%', once: true } });
-    tl.from(line, { scaleX: 0, transformOrigin: '0 50%', duration: 0.9, ease: EASE.inout }, 0)
-      .from(title, { opacity: 0, y: 28, duration: 0.9, ease: EASE.out }, 0.15)
-      .from(body, { opacity: 0, y: 16, duration: 0.7, ease: EASE.out, stagger: 0.12 }, 0.4);
-    gsap.fromTo(num, { yPercent: desktop ? 10 : 6 }, { yPercent: desktop ? -8 : -4, ease: 'none',
-      scrollTrigger: { trigger: s, start: 'top bottom', end: 'bottom top', scrub: true } });
-    ST.create({ trigger: s, start: 'top 55%', end: 'bottom 55%',
-      onToggle: (self) => {
-        s.classList.toggle('is-on', self.isActive);
-        if (idx[i]) idx[i].classList.toggle('is-on', self.isActive);
-      } });
-  });
-  if (idxWrap) ST.create({ trigger: '#sinais-lista', start: 'top 60%', end: 'bottom 40%', onToggle: (s) => idxWrap.classList.toggle('is-vis', s.isActive) });
-}
-
-/* 04: imagens assumem a tela (clip-path inset -> cheio) sem pin; parallax leve */
-function provas(desktop) {
-  $$('#provas [data-case-media]').forEach((fig) => {
-    const pic = $('.pic', fig), img = $('img', fig);
-    gsap.fromTo(pic, { clipPath: 'inset(8% 6% 8% 6%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
-      scrollTrigger: { trigger: fig, start: 'top 90%', end: 'top 30%', scrub: true } });
-    gsap.fromTo(img, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: fig, start: 'top 90%', end: 'bottom 30%', scrub: true } });
-  });
-  $$('#provas .fig--esboco, #provas .fig--mesa, #provas .fig--o1, #provas .fig--o2, #provas .fig--fm2, #provas .fig--fm3').forEach((fig) => {
-    const pic = $('.pic', fig);
-    gsap.fromTo(pic, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: EASE.out, clearProps: 'clipPath',
-      scrollTrigger: { trigger: fig, start: 'top 88%', once: true } });
-  });
 }
 
 /* 06: traço de pincel + pergunta final cinética (palavra a palavra, scrub) */
@@ -132,8 +99,45 @@ function formCta() {
   if (c) gsap.fromTo($$('[data-cta-line]', c), { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: EASE.inout, scrollTrigger: { trigger: c, start: 'top 60%', once: true } });
 }
 
+/* faixa inclinada: marquee contínuo (loop sem emenda). A rolagem acelera e inverte o sentido conforme a direção. */
+function faixa() {
+  const band = $('.faixa__in'); if (!band) return;
+  const base = [...band.children].slice(0, band.children.length / 2);
+  if (!base.length) return;
+  const trk = document.createElement('div');
+  trk.className = 'faixa__trk';
+  base.forEach((s) => trk.appendChild(s));
+  band.replaceChildren(trk);
+  band.classList.add('is-marquee');
+
+  let setW = 0, x = 0, dir = 1, boost = 0;
+  const measure = () => {
+    trk.querySelectorAll('[data-clone]').forEach((c) => c.remove());
+    const gap = parseFloat(getComputedStyle(trk).columnGap) || 0;
+    const last = base[base.length - 1];
+    setW = last.offsetLeft + last.offsetWidth + gap - base[0].offsetLeft;
+    const copies = Math.ceil((band.offsetWidth + setW) / setW);
+    for (let i = 0; i < copies; i++) base.forEach((s) => { const c = s.cloneNode(true); c.dataset.clone = ''; trk.appendChild(c); });
+  };
+  measure();
+  document.fonts?.ready.then(measure);
+  addEventListener('resize', () => { clearTimeout(faixa.t); faixa.t = setTimeout(measure, 250); });
+
+  const wrapX = () => gsap.utils.wrap(-setW, 0);
+  ST.create({ trigger: '.faixa', start: 'top bottom', end: 'bottom top',
+    onToggle: (s) => { s.isActive ? gsap.ticker.add(tick) : gsap.ticker.remove(tick); },
+    onUpdate: (s) => { dir = s.direction; boost = Math.min(Math.abs(s.getVelocity()) / 5, 500); } });
+
+  function tick(_t, dt) {
+    boost *= 0.94; // amortece o impulso da rolagem
+    x = wrapX()(x - dir * (30 + boost * 0.6) * dt / 1000);
+    gsap.set(trk, { x });
+  }
+}
+
 function init() {
   progressBar();
+  faixa();
   const mm = gsap.matchMedia();
   mm.add({ desktop: '(min-width: 1024px)', mobile: '(max-width: 1023px)' }, (ctx) => {
     const { desktop } = ctx.conditions;
@@ -141,8 +145,6 @@ function init() {
     hero(desktop);
     $$('[data-split]').forEach((h) => revealHeadline(h));
     diagnostico(desktop);
-    sinais(desktop);
-    provas(desktop);
     reveals();
     marks();
     parallax(desktop ? 6 : 3);
@@ -158,6 +160,7 @@ function init() {
       ST.refresh();
     }, 300);
   };
+  window.addEventListener('lp:sinais-size', refresh);
   ST.addEventListener('refresh', () => window.dispatchEvent(new Event('lp:refreshed')));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
   $$('img').forEach((i) => { if (!i.complete) i.addEventListener('load', refresh, { once: true }); });

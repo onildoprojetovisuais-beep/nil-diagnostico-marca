@@ -108,21 +108,17 @@
         <p class="diag-intro">No diagnóstico, eu vou olhar principalmente:</p>
         <ol class="axes">
           <li class="axis"><span class="axis__line" data-axis-line aria-hidden="true"></span>
-            <span class="label axis__n" aria-hidden="true">01</span>
-            <h3 data-axis-title>Percepção</h3>
-            <p>O que sua marca comunica nos primeiros contatos e qual impressão ela cria sobre o tamanho e o nível do seu negócio.</p></li>
+            <details class="axis__d"><summary><span class="label axis__n" aria-hidden="true">01</span><h3 data-axis-title>Percepção</h3><svg class="axis__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p>O que sua marca comunica nos primeiros contatos e qual impressão ela cria sobre o tamanho e o nível do seu negócio.</p></details></li>
           <li class="axis"><span class="axis__line" data-axis-line aria-hidden="true"></span>
-            <span class="label axis__n" aria-hidden="true">02</span>
-            <h3 data-axis-title>Coerência</h3>
-            <p>Se perfil, site, apresentações, campanhas, produtos e eventos parecem realmente fazer parte da mesma marca.</p></li>
+            <details class="axis__d"><summary><span class="label axis__n" aria-hidden="true">02</span><h3 data-axis-title>Coerência</h3><svg class="axis__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p>Se perfil, site, apresentações, campanhas, produtos e eventos parecem realmente fazer parte da mesma marca.</p></details></li>
           <li class="axis"><span class="axis__line" data-axis-line aria-hidden="true"></span>
-            <span class="label axis__n" aria-hidden="true">03</span>
-            <h3 data-axis-title>Entrega <span class="mono-x">×</span> imagem</h3>
-            <p>Se o nível que você já entrega aparece também na forma como seu negócio se apresenta.</p></li>
+            <details class="axis__d"><summary><span class="label axis__n" aria-hidden="true">03</span><h3 data-axis-title>Entrega <span class="mono-x">×</span> imagem</h3><svg class="axis__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p>Se o nível que você já entrega aparece também na forma como seu negócio se apresenta.</p></details></li>
           <li class="axis"><span class="axis__line" data-axis-line aria-hidden="true"></span>
-            <span class="label axis__n" aria-hidden="true">04</span>
-            <h3 data-axis-title>Prioridades</h3>
-            <p>Quais pontos merecem mais atenção agora e onde eu começaria a mexer.</p></li>
+            <details class="axis__d"><summary><span class="label axis__n" aria-hidden="true">04</span><h3 data-axis-title>Prioridades</h3><svg class="axis__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p>Quais pontos merecem mais atenção agora e onde eu começaria a mexer.</p></details></li>
         </ol>
       </div>
     </div>
@@ -151,51 +147,73 @@
       <p>Alguns sinais aparecem no dia a dia:</p>
     </div>
   </div>
+  <div class="sinais__run" id="sinais-run"><div class="sinais__stage" id="sinais-stage">
   <ol class="sinais__lista" id="sinais-lista">
-    <li class="sinal" data-sinal="1"><div class="wrap sinal__grid">
-      <div class="sinal__num" data-num aria-hidden="true">01</div>
-      <div class="sinal__body">
-        <span class="linha-sinal" data-sline aria-hidden="true"></span>
-        <h3 data-stitle><span class="sr">Sinal 1. </span>Você precisa explicar demais por que cobra o que cobra.</h3>
-        <p data-sbody>A proposta chega e começa a comparação de preço.</p>
-        <p data-sbody>Vem pedido de desconto e você precisa entrar na conversa para explicar equipe, estrutura, experiência e tudo o que está envolvido na entrega.</p>
-        <p data-sbody>Tem valor ali. Só que boa parte dele só aparece depois que você começa a explicar.</p>
-      </div></div></li>
-    <li class="sinal" data-sinal="2"><div class="wrap sinal__grid">
-      <div class="sinal__num" data-num aria-hidden="true">02</div>
-      <div class="sinal__body">
-        <span class="linha-sinal" data-sline aria-hidden="true"></span>
-        <h3 data-stitle><span class="sr">Sinal 2. </span>Cada ponto de contato parece uma empresa diferente.</h3>
-        <p data-sbody>O Instagram tem uma cara.<br>O site tem outra.<br>A proposta comercial vai para outro caminho.<br>O evento parece outra marca.</p>
-        <p data-sbody>Se eu esconder o logo, fica difícil perceber que tudo aquilo veio da mesma empresa.</p>
-        <div class="colagem" aria-hidden="true" data-sbody>
+    <li class="sinal" data-sinal="1">
+      <div class="wrap">
+      <h3 class="sinal__head"><button type="button" class="sinal__btn" id="sinal-btn-1" aria-expanded="false" aria-controls="sinal-panel-1">
+        <span class="sinal__num" aria-hidden="true">01</span>
+        <span class="sinal__tit"><span class="linha-sinal" aria-hidden="true"></span><span class="sinal__t"><span class="sr">Sinal 1. </span>Você precisa explicar demais por que cobra o que cobra.</span></span>
+        <span class="sinal__ico" aria-hidden="true"></span>
+      </button></h3>
+      <div class="sinal__panel" id="sinal-panel-1" role="region" aria-labelledby="sinal-btn-1"><div class="sinal__panel-in"><div class="sinal__body">
+        <p>A proposta chega e começa a comparação de preço.</p>
+        <p>Vem pedido de desconto e você precisa entrar na conversa para explicar equipe, estrutura, experiência e tudo o que está envolvido na entrega.</p>
+        <p>Tem valor ali. Só que boa parte dele só aparece depois que você começa a explicar.</p>
+      </div></div></div>
+      </div>
+    </li>
+    <li class="sinal" data-sinal="2">
+      <div class="wrap">
+      <h3 class="sinal__head"><button type="button" class="sinal__btn" id="sinal-btn-2" aria-expanded="false" aria-controls="sinal-panel-2">
+        <span class="sinal__num" aria-hidden="true">02</span>
+        <span class="sinal__tit"><span class="linha-sinal" aria-hidden="true"></span><span class="sinal__t"><span class="sr">Sinal 2. </span>Cada ponto de contato parece uma empresa diferente.</span></span>
+        <span class="sinal__ico" aria-hidden="true"></span>
+      </button></h3>
+      <div class="sinal__panel" id="sinal-panel-2" role="region" aria-labelledby="sinal-btn-2"><div class="sinal__panel-in"><div class="sinal__body">
+        <p>O Instagram tem uma cara.<br>O site tem outra.<br>A proposta comercial vai para outro caminho.<br>O evento parece outra marca.</p>
+        <p>Se eu esconder o logo, fica difícil perceber que tudo aquilo veio da mesma empresa.</p>
+        <div class="colagem" aria-hidden="true">
           <div class="colagem__t colagem__t--1"><x-pic id="fm-parede-verde-cartazes-o" class="foto" sizes="(min-width:1024px) 14vw, 42vw" focal="22% 30%" alt=""></x-pic></div>
           <div class="colagem__t colagem__t--2"><x-pic id="armi-caderno-dourado" class="foto" sizes="(min-width:1024px) 14vw, 42vw" focal="92% 40%" alt=""></x-pic></div>
           <div class="colagem__t colagem__t--3"><x-pic id="codigos-familia-kit-caixa" class="foto" sizes="(min-width:1024px) 14vw, 42vw" focal="28% 60%" alt=""></x-pic></div>
           <div class="colagem__t colagem__t--4"><x-pic id="escola-vestir-rollups" class="foto" sizes="(min-width:1024px) 14vw, 42vw" focal="22% 75%" alt=""></x-pic></div>
         </div>
-      </div></div></li>
-    <li class="sinal" data-sinal="3"><div class="wrap sinal__grid">
-      <div class="sinal__num" data-num aria-hidden="true">03</div>
-      <div class="sinal__body">
-        <span class="linha-sinal" data-sline aria-hidden="true"></span>
-        <h3 data-stitle><span class="sr">Sinal 3. </span>Tem concorrente menor que parece maior que você.</h3>
-        <p data-sbody class="pega">Esse aqui pega.</p>
-        <p data-sbody>Você conhece o mercado. Sabe o tamanho da sua operação e o nível do que entrega.</p>
-        <p data-sbody>Só que olha para outro negócio menor e ele parece mais estruturado, mais preparado e até mais valioso.</p>
-        <p data-sbody>O cliente que está chegando agora não conhece os bastidores que você conhece.</p>
-      </div></div></li>
-    <li class="sinal" data-sinal="4"><div class="wrap sinal__grid">
-      <div class="sinal__num" data-num aria-hidden="true">04</div>
-      <div class="sinal__body">
-        <span class="linha-sinal" data-sline aria-hidden="true"></span>
-        <h3 data-stitle><span class="sr">Sinal 4. </span>Toda oportunidade grande exige “arrumar a marca” correndo.</h3>
-        <p data-sbody>Vai ter um evento importante? Precisa fazer uma apresentação melhor.</p>
-        <p data-sbody>Entrou uma parceria grande? O material atual já não serve.</p>
-        <p data-sbody>Vai lançar algo novo? Agora o site parece pequeno.</p>
-        <p data-sbody>Toda vez que o negócio precisa se apresentar em um nível mais alto, começa uma correria para a imagem acompanhar.</p>
-      </div></div></li>
+      </div></div></div>
+      </div>
+    </li>
+    <li class="sinal" data-sinal="3">
+      <div class="wrap">
+      <h3 class="sinal__head"><button type="button" class="sinal__btn" id="sinal-btn-3" aria-expanded="false" aria-controls="sinal-panel-3">
+        <span class="sinal__num" aria-hidden="true">03</span>
+        <span class="sinal__tit"><span class="linha-sinal" aria-hidden="true"></span><span class="sinal__t"><span class="sr">Sinal 3. </span>Tem concorrente menor que parece maior que você.</span></span>
+        <span class="sinal__ico" aria-hidden="true"></span>
+      </button></h3>
+      <div class="sinal__panel" id="sinal-panel-3" role="region" aria-labelledby="sinal-btn-3"><div class="sinal__panel-in"><div class="sinal__body">
+        <p class="pega">Esse aqui pega.</p>
+        <p>Você conhece o mercado. Sabe o tamanho da sua operação e o nível do que entrega.</p>
+        <p>Só que olha para outro negócio menor e ele parece mais estruturado, mais preparado e até mais valioso.</p>
+        <p>O cliente que está chegando agora não conhece os bastidores que você conhece.</p>
+      </div></div></div>
+      </div>
+    </li>
+    <li class="sinal" data-sinal="4">
+      <div class="wrap">
+      <h3 class="sinal__head"><button type="button" class="sinal__btn" id="sinal-btn-4" aria-expanded="false" aria-controls="sinal-panel-4">
+        <span class="sinal__num" aria-hidden="true">04</span>
+        <span class="sinal__tit"><span class="linha-sinal" aria-hidden="true"></span><span class="sinal__t"><span class="sr">Sinal 4. </span>Toda oportunidade grande exige “arrumar a marca” correndo.</span></span>
+        <span class="sinal__ico" aria-hidden="true"></span>
+      </button></h3>
+      <div class="sinal__panel" id="sinal-panel-4" role="region" aria-labelledby="sinal-btn-4"><div class="sinal__panel-in"><div class="sinal__body">
+        <p>Vai ter um evento importante? Precisa fazer uma apresentação melhor.</p>
+        <p>Entrou uma parceria grande? O material atual já não serve.</p>
+        <p>Vai lançar algo novo? Agora o site parece pequeno.</p>
+        <p>Toda vez que o negócio precisa se apresentar em um nível mais alto, começa uma correria para a imagem acompanhar.</p>
+      </div></div></div>
+      </div>
+    </li>
   </ol>
+  </div></div>
   <div class="wrap sinais__fecho">
     <p class="lead">Se você se reconheceu em alguns desses pontos, provavelmente existe alguma distância entre <strong>o negócio que você construiu e o negócio que sua marca está mostrando.</strong></p>
     <a class="cta" href="#diagnostico" data-cta data-track-location="sinais"><span>Quero meu Diagnóstico de Marca</span><svg class="cta__seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
@@ -212,98 +230,8 @@
     <p class="lead provas__lead">Meu trabalho acontece principalmente quando uma marca precisa ganhar <span class="hl hl--o">corpo<svg class="hl__o" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M52 3 C 22 1, 3 10, 4 21 C 5 33, 30 38, 56 37 C 84 36, 98 27, 96 15 C 94 6, 74 2, 44 6"/></svg></span>: no digital, nos produtos e, cada vez mais, nos eventos.</p>
   </div>
 
-  <!-- ARMI -->
-  <article class="case case--armi">
-    <div class="wrap case__head">
-      <h3>ARMI Club</h3>
-      <p class="case__sub"><strong>Uma marca que precisava existir além da tela.</strong></p>
-    </div>
-    <div class="wrap case__ancora">
-      <figure class="mira fig fig--ancora" data-case-media>
-        <x-pic id="armi-brasao-backdrop-luz" class="foto--cor" sizes="(min-width:1024px) 46vw, 100vw" focal="50% 55%" alt="Brasão do ARMI Club iluminado em um backdrop no evento"></x-pic>
-        <figcaption class="label label--plain">[ 01 — Brasão ]</figcaption>
-      </figure>
-      <div class="case__texto">
-        <p>No ARMI, a construção visual chegou à experiência presencial e aos elementos que carregavam significado para quem estava ali.</p>
-        <p>A marca apareceu no ambiente, nos materiais e na própria experiência do evento.</p>
-      </div>
-    </div>
-    <div class="videos">
-      <div class="videos__trilho" data-trilho role="group" tabindex="0" aria-label="Três trechos em vídeo do evento ARMI Club, sem áudio">
-        <figure class="vid" data-vid="armi-brasao-maria">
-          <video muted playsinline loop preload="none" width="720" height="1280" data-poster="/video/armi-brasao-maria-poster.webp" data-autoplay aria-label="Brasão do ARMI Club exibido no telão do evento"></video>
-          <figcaption class="label label--plain">[ 02 — Telão ]</figcaption>
-        </figure>
-        <figure class="vid" data-vid="armi-pessoas-certas-rodrigao">
-          <video muted playsinline loop preload="none" width="720" height="1280" data-poster="/video/armi-pessoas-certas-rodrigao-poster.webp" data-autoplay aria-label="Painel do evento ARMI Club com a frase As pessoas certas"></video>
-          <figcaption class="label label--plain">[ 03 — Painel ]</figcaption>
-        </figure>
-        <figure class="vid" data-vid="armi-telao-casa-mariadel">
-          <video muted playsinline loop preload="none" width="720" height="1280" data-poster="/video/armi-telao-casa-mariadel-poster.webp" data-autoplay aria-label="Telão do evento ARMI Club com uma foto de família"></video>
-          <figcaption class="label label--plain">[ 04 — Ambiente ]</figcaption>
-        </figure>
-      </div>
-    </div>
-    <figure class="sangra fig" data-case-media>
-      <x-pic id="armi-espaco-brasao-parede" class="foto" sizes="100vw" focal="76% 50%" alt="Ambiente do ARMI Club com o brasão em um painel de parede"></x-pic>
-      <figcaption class="wrap label label--plain">[ 05 — Espaço ]</figcaption>
-    </figure>
-    <div class="wrap armi__extra">
-      <figure class="mira fig fig--esboco">
-        <x-pic id="armi-brasao-esboco-mao" class="foto" sizes="(min-width:1024px) 40vw, 100vw" focal="30% 45%" alt="Mão desenhando a lápis o brasão do ARMI Club"></x-pic>
-        <figcaption class="label label--plain">[ 06 — Esboço ]</figcaption>
-      </figure>
-      <figure class="mira fig fig--mesa">
-        <x-pic id="armi-mesa-evento" class="foto" sizes="(min-width:1024px) 38vw, 100vw" focal="50% 55%" alt="Mesa de evento com materiais da marca ARMI Club"></x-pic>
-        <figcaption class="label label--plain">[ 07 — Mesa ]</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <!-- Feminino Moderno -->
-  <article class="case case--fm">
-    <div class="wrap case__head">
-      <h3>Feminino Moderno</h3>
-      <p class="case__sub"><strong>Quando a marca ocupa a experiência inteira.</strong></p>
-    </div>
-    <div class="wrap fm__colagem">
-      <figure class="mira fig fig--fm1" data-case-media>
-        <x-pic id="fm-cartazes-close-novo-sempre-melhor" class="foto" sizes="(min-width:1024px) 52vw, 92vw" focal="50% 45%" alt="Cartazes tipográficos gigantes do evento Feminino Moderno"></x-pic>
-        <span class="fita" aria-hidden="true"></span>
-        <figcaption class="label label--plain">[ 01 — Cartazes ]</figcaption>
-      </figure>
-      <figure class="mira fig fig--fm2">
-        <x-pic id="fm-cartazes-jardim-noite" class="foto" sizes="(min-width:1024px) 34vw, 70vw" focal="50% 55%" alt="Estrutura de cartazes e flores do Feminino Moderno à noite"></x-pic>
-        <figcaption class="label label--plain">[ 02 — Ambiente ]</figcaption>
-      </figure>
-      <figure class="mira fig fig--fm3">
-        <x-pic id="fm-sonho-ancestrais-painel" class="foto" sizes="(min-width:1024px) 34vw, 78vw" focal="58% 50%" alt="Painel vermelho do palco do Feminino Moderno com a frase Eu sou o sonho das minhas ancestrais"></x-pic>
-        <figcaption class="label label--plain">[ 03 — Palco ]</figcaption>
-      </figure>
-    </div>
-    <div class="wrap fm__texto">
-      <p>Criei o padrão visual do Feminino Moderno e levei a mesma linguagem para diferentes pontos da experiência.</p>
-      <p class="pergunta-txt">Foi nesse projeto que ouvi da CEO que havíamos transformado aquela marca em um <span class="serif-q hl hl--u">“organismo vivo.”</span></p>
-      <p>Essa frase ficou comigo porque traduz muito do que acredito sobre branding: uma marca precisa conseguir existir e ser reconhecida nos lugares onde o negócio acontece.</p>
-    </div>
-  </article>
-
-  <!-- Outros -->
-  <article class="case case--outros">
-    <div class="wrap">
-      <h3>Outros projetos</h3>
-      <div class="outros">
-        <figure class="mira fig fig--o1">
-          <x-pic id="escola-vestir-backdrop-evento" class="foto" sizes="(min-width:1024px) 40vw, 92vw" focal="50% 50%" alt="Aplicação da identidade da Escola do Vestir em um backdrop de evento"></x-pic>
-          <figcaption class="label label--plain">Escola do Vestir · identidade aplicada</figcaption>
-        </figure>
-        <figure class="mira fig fig--o2">
-          <x-pic id="codigos-familia-palco" class="foto" sizes="(min-width:1024px) 40vw, 92vw" focal="50% 50%" alt="Aplicação da identidade Códigos da Família em um palco de evento"></x-pic>
-          <figcaption class="label label--plain">Códigos da Família · identidade aplicada</figcaption>
-        </figure>
-      </div>
-    </div>
-  </article>
+  <!-- Galeria de cases (montada por src/js/galeria.js a partir de src/data/cases.js) -->
+  <div data-galeria><noscript><p class="wrap lead">ARMI Club · Feminino Moderno · Encontro das Deusas · Líderes em Movimento · Escola do Vestir · Códigos da Família</p></noscript></div>
 </section>
 
 <!-- 05 — STUDIO PIXEL RAIN -->
