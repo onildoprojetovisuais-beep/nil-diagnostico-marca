@@ -1,0 +1,179 @@
+// Coreografia GSAP/ScrollTrigger (adaptada de _planning/motion-snippets/motion.js).
+// Carregado dinamicamente depois do load e só sem prefers-reduced-motion. Sem Lenis, sem normalizeScroll.
+import { gsap } from 'gsap';
+import { ScrollTrigger as ST } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
+
+gsap.registerPlugin(ST, SplitText);
+document.documentElement.classList.add('js-motion');
+ST.config({ ignoreMobileResize: true });
+
+const DIM = '#7C8085', LIT = '#F1F2EE';
+const EASE = { out: 'power3.out', inout: 'power2.inOut', none: 'none' };
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => gsap.utils.toArray(s, c);
+
+/* Reveal de headline por máscara de linha (aria-label no original, linhas aria-hidden) */
+function revealHeadline(el, { start = 'top 85%', dur = 1.0, stagger = 0.09 } = {}) {
+  SplitText.create(el, {
+    type: 'lines', mask: 'lines', linesClass: 'ln', maskClass: 'ln-mask', autoSplit: true, aria: 'auto',
+    onSplit: (self) => gsap.from(self.lines, { yPercent: 105, duration: dur, ease: EASE.out, stagger, scrollTrigger: { trigger: el, start, once: true } }),
+  });
+}
+
+function reveals() {
+  ST.batch($$('[data-reveal]'), {
+    start: 'top 90%', once: true,
+    onEnter: (b) => gsap.to(b, { opacity: 1, y: 0, duration: 0.8, ease: EASE.out, stagger: 0.08, overwrite: true }),
+  });
+}
+
+function parallax(amt) {
+  $$('[data-parallax-wrap]').forEach((w) => {
+    const img = $('img', w); if (!img) return;
+    gsap.fromTo(img, { yPercent: -amt, scale: 1.12 }, { yPercent: amt, scale: 1.12, ease: 'none',
+      scrollTrigger: { trigger: w, start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+  });
+}
+
+function progressBar() {
+  const bar = $('#read-progress'); if (!bar) return;
+  gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.2 } });
+}
+
+function hero(desktop) {
+  if (!desktop) return;
+  gsap.to('#hero [data-hero-inner]', { yPercent: -6, opacity: 0.2, ease: 'none',
+    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+}
+
+/* 02: título em linhas, trilho vermelho por eixo (scrub), eixo ativo (desktop) */
+function diagnostico(desktop) {
+  const axes = $$('#diag .axis');
+  axes.forEach((ax) => {
+    const ln = $('[data-axis-line]', ax);
+    if (ln) gsap.fromTo(ln, { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: ax, start: 'top 75%', end: 'bottom 55%', scrub: true } });
+    gsap.from(ax, { opacity: 0, y: 28, duration: 0.8, ease: EASE.out, scrollTrigger: { trigger: ax, start: 'top 90%', once: true } });
+  });
+  if (desktop) {
+    // eixo ativo destacado por cor (h3) e trilho, sem baixar opacidade do texto (contraste AA)
+    axes.forEach((ax) => ST.create({ trigger: ax, start: 'top 58%', end: 'bottom 58%',
+      onToggle: (s) => ax.classList.toggle('is-active', s.isActive) }));
+  }
+}
+
+/* 03: cada sinal: linha, título, corpo, numeral (contorno -> preenchido) */
+function sinais(desktop) {
+  const idx = $$('#sinais-idx li'), idxWrap = $('#sinais-idx');
+  $$('#sinais .sinal').forEach((s, i) => {
+    const num = $('[data-num]', s), line = $('[data-sline]', s), title = $('[data-stitle]', s), body = $$('[data-sbody]', s);
+    const tl = gsap.timeline({ scrollTrigger: { trigger: s, start: 'top 68%', once: true } });
+    tl.from(line, { scaleX: 0, transformOrigin: '0 50%', duration: 0.9, ease: EASE.inout }, 0)
+      .from(title, { opacity: 0, y: 28, duration: 0.9, ease: EASE.out }, 0.15)
+      .from(body, { opacity: 0, y: 16, duration: 0.7, ease: EASE.out, stagger: 0.12 }, 0.4);
+    gsap.fromTo(num, { yPercent: desktop ? 10 : 6 }, { yPercent: desktop ? -8 : -4, ease: 'none',
+      scrollTrigger: { trigger: s, start: 'top bottom', end: 'bottom top', scrub: true } });
+    ST.create({ trigger: s, start: 'top 55%', end: 'bottom 55%',
+      onToggle: (self) => {
+        s.classList.toggle('is-on', self.isActive);
+        if (idx[i]) idx[i].classList.toggle('is-on', self.isActive);
+      } });
+  });
+  if (idxWrap) ST.create({ trigger: '#sinais-lista', start: 'top 60%', end: 'bottom 40%', onToggle: (s) => idxWrap.classList.toggle('is-vis', s.isActive) });
+}
+
+/* 04: imagens assumem a tela (clip-path inset -> cheio) sem pin; parallax leve */
+function provas(desktop) {
+  $$('#provas [data-case-media]').forEach((fig) => {
+    const pic = $('.pic', fig), img = $('img', fig);
+    gsap.fromTo(pic, { clipPath: 'inset(8% 6% 8% 6%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
+      scrollTrigger: { trigger: fig, start: 'top 90%', end: 'top 30%', scrub: true } });
+    gsap.fromTo(img, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: fig, start: 'top 90%', end: 'bottom 30%', scrub: true } });
+  });
+  $$('#provas .fig--esboco, #provas .fig--mesa, #provas .fig--o1, #provas .fig--o2, #provas .fig--fm2, #provas .fig--fm3').forEach((fig) => {
+    const pic = $('.pic', fig);
+    gsap.fromTo(pic, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: EASE.out, clearProps: 'clipPath',
+      scrollTrigger: { trigger: fig, start: 'top 88%', once: true } });
+  });
+}
+
+/* 06: traço de pincel + pergunta final cinética (palavra a palavra, scrub) */
+function sobre(desktop) {
+  const pincel = $('#sobre .pincel');
+  if (pincel) gsap.fromTo(pincel, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: EASE.inout, scrollTrigger: { trigger: pincel, start: 'top 88%', once: true } });
+  $$('#sobre .prosa p').forEach((p) => gsap.from(p, { opacity: 0, y: 20, duration: 0.7, ease: EASE.out, scrollTrigger: { trigger: p, start: 'top 90%', once: true } }));
+  const q = $('#sobre [data-final-question]'); if (!q) return;
+  const label = q.textContent.replace(/\s+/g, ' ').trim();
+  q.setAttribute('aria-label', label);
+  q.innerHTML = label.split(' ').map((w) => `<span class="fw" aria-hidden="true">${w}</span>`).join(' ');
+  const ws = $$('.fw', q);
+  // palavras "apagadas" em cinza AA (>= 4,5:1 sobre grafite) e "acesas" em gelo
+  gsap.set(ws, { color: DIM });
+  if (desktop) {
+    gsap.to(ws, { color: LIT, stagger: 0.5, ease: 'none',
+      scrollTrigger: { trigger: '#sobre .final-q-wrap', start: 'top 25%', end: '+=90%', pin: true, scrub: 0.5, anticipatePin: 1 } });
+  } else {
+    gsap.to(ws, { color: LIT, stagger: 0.4, ease: 'none', scrollTrigger: { trigger: q, start: 'top 80%', end: 'bottom 45%', scrub: true } });
+  }
+}
+
+/* 07 e 08 */
+function formCta() {
+  // Formulário: sem animação de opacidade/visibility nos campos (Tab, foco e leitor de tela sempre funcionam).
+  const c = $('#cta-final');
+  if (c) gsap.fromTo($$('[data-cta-line]', c), { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: EASE.inout, scrollTrigger: { trigger: c, start: 'top 60%', once: true } });
+}
+
+function init() {
+  progressBar();
+  const mm = gsap.matchMedia();
+  mm.add({ desktop: '(min-width: 1024px)', mobile: '(max-width: 1023px)' }, (ctx) => {
+    const { desktop } = ctx.conditions;
+    // ordem de criação = ordem do DOM (regra de pins do ScrollTrigger)
+    hero(desktop);
+    $$('[data-split]').forEach((h) => revealHeadline(h));
+    diagnostico(desktop);
+    sinais(desktop);
+    provas(desktop);
+    reveals();
+    parallax(desktop ? 6 : 3);
+    sobre(desktop);
+    formCta();
+  });
+  // Um único refresh com debounce; adiado enquanto o CTA está rolando (evita cancelar a rolagem)
+  let rt = 0;
+  const refresh = () => {
+    clearTimeout(rt);
+    rt = setTimeout(function go() {
+      if (document.documentElement.dataset.scrolling) { rt = setTimeout(go, 200); return; }
+      ST.refresh();
+    }, 300);
+  };
+  ST.addEventListener('refresh', () => window.dispatchEvent(new Event('lp:refreshed')));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  $$('img').forEach((i) => { if (!i.complete) i.addEventListener('load', refresh, { once: true }); });
+  refresh();
+
+  // Preserva a posição ao cruzar 1024px (rotação de iPad / redimensionar): ancora na seção sob o olhar
+  const secs = $$('[data-chapter]');
+  let anchor = null, freeze = false, fz = 0;
+  const record = () => {
+    if (freeze) return;
+    const mid = innerHeight * 0.4;
+    for (const el of secs) { const r = el.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) { anchor = { el, f: (mid - r.top) / r.height }; return; } }
+  };
+  addEventListener('scroll', record, { passive: true });
+  addEventListener('resize', () => { freeze = true; clearTimeout(fz); fz = setTimeout(() => { freeze = false; record(); }, 700); });
+  record();
+  matchMedia('(min-width: 1024px)').addEventListener('change', () => {
+    const a = anchor;
+    setTimeout(() => {
+      ST.refresh();
+      if (a) { const r = a.el.getBoundingClientRect(); scrollTo(0, scrollY + r.top + a.f * r.height - innerHeight * 0.4); }
+    }, 200);
+  });
+  // segurança: se algo falhar, revela tudo
+  setTimeout(() => { if (!ST.getAll().length) document.documentElement.classList.remove('js-motion'); }, 3000);
+}
+
+init();

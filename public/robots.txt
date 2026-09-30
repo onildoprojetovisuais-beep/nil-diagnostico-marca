@@ -1,0 +1,3 @@
+# DECISAO PENDENTE: indexavel por padrao. Para esconder do Google, use "Disallow: /" e troque a meta robots do index.html para noindex.
+User-agent: *
+Allow: /

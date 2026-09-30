@@ -1,0 +1,6 @@
+/* Estados iniciais SÓ com .js-motion e sem reduced-motion: sem JS o conteúdo fica visível. */
+@media (prefers-reduced-motion: no-preference) {
+  .js-motion [data-reveal] { opacity: 0; transform: translateY(24px); }
+}
+.ln-mask { padding-bottom: .14em; margin-bottom: -.14em; }
+[data-parallax-wrap] .pic img { will-change: transform; }
