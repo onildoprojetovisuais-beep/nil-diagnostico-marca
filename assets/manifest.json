@@ -1,0 +1,1500 @@
+{
+ "version": 1,
+ "generated": "2026-09-29",
+ "note": "Caminhos relativos a assets/. Cada imagem: <id>-<w>.{avif,webp,jpg}. Use <picture> avif>webp>jpg e width/height (intrinsic) para evitar CLS. focal = object-position sugerido. lqip = data-URI webp 24px.",
+ "formats": [
+  "avif",
+  "webp",
+  "jpg"
+ ],
+ "images": [
+  {
+   "id": "nil-hero-luz-dramatica",
+   "section": "01-hero",
+   "priority": "A",
+   "path": "img/nil-hero-luz-dramatica",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/01 (153).JPG",
+    "width": 4160,
+    "height": 6240
+   },
+   "aspect": 0.6667,
+   "focal": "46% 30%",
+   "treatment": "P&B alto contraste; ja e low-key, vinheta grafite; funde no #111214",
+   "alt_suggested": "Retrato de Nil em luz dramatica, de perfil, caneta do iPad na tempora",
+   "notes": "Melhor para hero em fundo grafite: metade superior escura (espaco para titulo). Sem olhar direto.",
+   "dominant": "#1c1518",
+   "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBQCdASoYACQAPxFys1QsJiQjMBVYAYAiCWcAz9wubRyQ9NRIqaY+20CAkwKv26f4IAD+7oQATM2tRcHEYZYU28Eudfs2hzlZ/NniFDbUEEjsZT2gm4kSC1LK368PZw8EeNSWaZ7pGjdPliECIovFLnOuqoWKGl8eAAAA"
+  },
+  {
+   "id": "nil-hero-estudio-tablet",
+   "section": "01-hero",
+   "priority": "B",
+   "path": "img/nil-hero-estudio-tablet",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/01 (147).JPG",
+    "width": 3915,
+    "height": 5872
+   },
+   "aspect": 0.6667,
+   "focal": "49% 18%",
+   "treatment": "P&B/dessaturado; levantar sombras; recorte 4:5 no rosto para mobile",
+   "alt_suggested": "Nil sentado com iPad, olhando para cima; bigode, piercing e tatuagens visiveis",
+   "notes": "Rosto frontal, bigode e piercing nitidos (ativo distintivo). Fundo cinza neutro. Olhar para cima, nao para a camera.",
+   "dominant": "#383034",
+   "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABQBgCdASoYACQAPxF2tFOsJqSisBVYAYAiCWUAzcAnyOi6Bd7ciEHJHil/DE3d5x5+9eAu18ZjZ7yIgAD9H4jC6pAlMM0VuOWOPmz02F2r0giLAoe9tI5zl3sMuSmXWheujUcftz008Ch0TOTuwyQz7/3bmICsBM9LW0wYrzepoKbCpCFEB9FGcOplP5wn6K7+r7fa2Dt4OukdakRtqA99BPTL/smJjZRSNTFHZiN1heZC8YAAAA=="
+  },
+  {
+   "id": "nil-armi-brasao-telao",
+   "section": "01-hero|04-armi",
+   "priority": "C",
+   "path": "img/nil-armi-brasao-telao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/Armi Club-00091 (1).jpg",
+    "width": 4672,
+    "height": 7008
+   },
+   "aspect": 0.6667,
+   "focal": "52% 32%",
+   "treatment": "P&B/dessaturado (fundo azul vira grafite); brasao ARMI vira textura atras do rosto",
+   "alt_suggested": "Nil pensativo diante do brasao ARMI Club no telao do evento, cracha Equipe",
+   "notes": "Une Nil + prova ARMI numa imagem so. Cracha com nome completo legivel (confirmar se pode aparecer; ou desfocar).",
+   "dominant": "#4b4149",
+   "lqip": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADwBQCdASoYACQAPxFyqFQsJiMjMBVRgCIJbACdMoNCgGSPHHizp+X+8lqZxkdFeUQdWCOSlyewAAD+4/V8EGzZvxeoSYiIwx+tj3OY7ZT/HkarO1UT7Cy3GWLPhqDmpduEcNalS6ulBn8IDMTYMELG1cWUICQTthGMsqPnIP9NM4IjES1x0adoLOKRaz4PvCuEI10oJqsLhj9lFndVIp4WbwPdUlc33oZKxxYvJbl9lPSE+9g0qIX48pjpwoZxFYt8ggAA"
+  },
+  {
+   "id": "nil-frontal-poltrona",
+   "section": "06-sobre",
+   "priority": "A",
+   "path": "img/nil-frontal-poltrona",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/agency/lp-pixel-agency/experts/nil.jpg",
+    "width": 2731,
+    "height": 4096
+   },
+   "aspect": 0.6667,
+   "focal": "50% 13%",
+   "treatment": "P&B; recorte 4:5",
+   "alt_suggested": "Nil sentado na poltrona, olhando para a camera, iPad no colo",
+   "notes": "Unico retrato com olhar direto para camera; melhor \"confianca\" para a secao Sobre.",
+   "dominant": "#231e1f",
+   "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBQCdASoYACQAPxF0sFAsJySisAgBgCIJZwDSrCHf3jD9FxHjdFKpHPfE94b/oo0p1xg6gAD+4riBVf2assXvlMckVJjdUK9A0kuBA05A9xOt6gmd3s1I2tGK0ZfIlbWP0L+U5MwfPdGogx8EoQm7dxHPEKhIleQtamKZSML45vZcjST5vMO0QJPgAAAA"
+  },
+  {
+   "id": "nil-jaque-fundo-branco-wide",
+   "section": "05-studio",
+   "priority": "B",
+   "path": "img/nil-jaque-fundo-branco-wide",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/01 (1).JPG",
+    "width": 6240,
+    "height": 4160
+   },
+   "aspect": 1.5,
+   "focal": "54% 20%",
+   "treatment": "Fundo branco estourado: so em secao gelo (multiply/P&B); em secao grafite exige recorte",
+   "alt_suggested": "Nil e Jaque lado a lado em estudio, fundo branco",
+   "notes": "High-key destoa do resto do set. Batom vermelho da Jaque = sinal natural do vermelho.",
+   "dominant": "#dbd2dd",
+   "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoYABAAPxFysFCsJqSisAgBgCIJYwDCgYwm3FI0REi65zqX3Lv2AAD+7UO8vDkaonoMfGpzf/2nKZpu5Uo2Yx3lEGeLqdgU6aDKto9trUQJ+3qfpHKQweG/pA8/jTbn2BpgRxSJqgzkWbwkacp/COSH0oEJP7IClgAAAA=="
+  },
+  {
+   "id": "nil-jaque-fundo-branco-full",
+   "section": "05-studio",
+   "priority": "C",
+   "path": "img/nil-jaque-fundo-branco-full",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/01 (6).JPG",
+    "width": 4160,
+    "height": 6240
+   },
+   "aspect": 0.6667,
+   "focal": "58% 17%",
+   "treatment": "P&B; corpo inteiro",
+   "alt_suggested": "Nil e Jaque de corpo inteiro, fundo branco",
+   "notes": "Variante vertical/corpo inteiro.",
+   "dominant": "#d6d3de",
+   "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAABwBgCdASoYACQAPxF+uVYsJ6WjpWmZgCIJZQDO7ywTpIP2OMAPibQeZph7fA4rk35LBMxDDTW7cBU/0hwA/u1FtpdiafnJdxq0ZBTuhj0ptfzfR/cMF4TnylFvtFwy5L288C8u3uLwc2VWh/dPvzTJ0vwutF0e5/sPb9LCKYzpJ4+WqIAp4T0ahuKmC0zo631M+W19hhTVJP2lOfgRLZ1LmJ59dpX9NQRiLysIVK9Lz25hXhDQcex0NEtstmCRkAzSQ8bzepdsMhkn2r33bRt1rW/pt9C3u6QTXV8rQsYXTrmc0CTKUm13AAA="
+  },
+  {
+   "id": "jaque-retrato-luz",
+   "section": "05-studio",
+   "priority": "A",
+   "path": "img/jaque-retrato-luz",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/agency/lp-pixel-agency/experts/jaque.jpg",
+    "width": 2731,
+    "height": 4096
+   },
+   "aspect": 0.6667,
+   "focal": "38% 28%",
+   "treatment": "P&B; combina com nil-frontal-poltrona (mesmo set)",
+   "alt_suggested": "Retrato de Jaque em luz lateral com caneta do iPad no queixo",
+   "notes": "Mesmo cenario dos retratos de Nil; par coerente. Foto de Jaque EXISTE.",
+   "dominant": "#1e191e",
+   "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwBQCdASoYACQAPxFysVGsJqSisBqoAYAiCWUA0qwWbr1ZZbOJCZriCRjO/Shs04rs9U/aLDpEAAD+2SuKcW9lBPs8LgDOOPhQ/zkSjkuF+N1km2+a5GMxtP6JQmdSZqGRPGifyAYhk1tcQY4oc6jJLKTHeQGf5FdJmOBgsAuULhlpdJlnP8mbUBHUCAAAAAA="
+  },
+  {
+   "id": "jaque-nil-perfil-lilas",
+   "section": "05-studio",
+   "priority": "A",
+   "path": "img/jaque-nil-perfil-lilas",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/agency/lp-pixel-agency/experts/jaque-e-nil.jpg",
+    "width": 4096,
+    "height": 2731
+   },
+   "aspect": 1.4998,
+   "focal": "55% 35%",
+   "treatment": "P&B/dessaturado (fundo lilas vira cinza)",
+   "alt_suggested": "Jaque e Nil de perfil olhando na mesma direcao, com iPad e celular",
+   "notes": "Melhor imagem da dupla (estrategia + direcao criativa olhando o mesmo negocio).",
+   "dominant": "#675167",
+   "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoYABAAPxFysFAsJqSisAgBgCIJQBfnBCpjt928zNNY2oRgAP65Y1gPOHqXqxmSQ5k6Sv0aXrOhTRee7U8a2ZcOtsYNx/MY37c/Yi7rCMDqcuEzP1rOEHTIXQbM1NhAAAA="
+  },
+  {
+   "id": "nil-detalhe-macbook-mao",
+   "section": "opcional",
+   "priority": "-",
+   "path": "img/nil-detalhe-macbook-mao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "ONILDO/fotos/01 (112).JPG",
+    "width": 3216,
+    "height": 2144
+   },
+   "aspect": 1.5,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Braco tatuado de Nil segurando um MacBook",
+   "notes": "Detalhe sem rosto; reserva como textura/transicao.",
+   "dominant": "#6b5364",
+   "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoYABAAPxFysFAsJqSisAgBgCIJYgAAVLVsDffQg10/p/cLKKYQAP6DTrS6FsBC0mB/xciLXSaHe1H5KYDFIBa+YNUJ0UFsi4mSC+ZeZMIXwOiwG8tAlQAfew5czbQEkpT3PFWbxa/u1UAoXASagAAA"
+  },
+  {
+   "id": "nil-cartazes-feminino-moderno",
+   "section": "06-sobre",
+   "priority": "A",
+   "path": "img/nil-cartazes-feminino-moderno",
+   "widths": [
+    480,
+    800,
+    1080
+   ],
+   "intrinsic": {
+    "width": 1080,
+    "height": 1080
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/proposta-comercial/Proposta comercial - Ambientação de escritorio e eventos/expert/EXPERT.jpg",
+    "width": 1080,
+    "height": 1080
+   },
+   "aspect": 1,
+   "focal": "68% 22%",
+   "treatment": "P&B; parede de cartazes vira textura de cartazista",
+   "alt_suggested": "Nil pensativo diante de parede de cartazes tipograficos do Feminino Moderno",
+   "notes": "Unico material que liga Nil a cartaz visualmente. 1080x1080 (nao ampliar). Nao e cartaz de varejo nem pincel.",
+   "dominant": "#706557",
+   "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAACQBQCdASoYABgAPxF+tVWsJ6SjKAgBgCIJQBadtfLcaNOLG3U/74ke/Kc3kdXG2Q8C/egs4AD68lLnqxGoWD9w6NnWkjUitnzSIJ1mTAUEYENUj9OlRBjVPNipGYA35HAegBhWCFOv3HSVa8ZcUWuS/ybuWBS69jA/h5FmI9oJkdh5QCpZe5NIOz9pLyjfZOPyBX6Udx71cwdsX/r+RtU94ANuhgeACGZRBlcC3S/KZV3pNMzApo8DY5EV1cUEopoUCbZ/mVChGOTBdombLH/xSvP5+EG7JcLAMt6QlDHq74AA"
+  },
+  {
+   "id": "armi-brasao-backdrop-luz",
+   "section": "04-armi",
+   "priority": "A",
+   "path": "img/armi-brasao-backdrop-luz",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-066.jpg",
+    "width": 2731,
+    "height": 4096
+   },
+   "aspect": 0.6667,
+   "focal": "50% 55%",
+   "treatment": "P&B com brasao em gelo; barra de luz ambar pode virar o sinal #C94B3F",
+   "alt_suggested": "Painel do brasao ARMI Club Family Equity iluminado no evento",
+   "notes": "Foto-heroi do brasao aplicado. Vertical 2:3.",
+   "dominant": "#442820",
+   "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAABwBgCdASoYACQAPxF6s1KsJ6SiqqoBgCIJQBcGAhLcs7Clb2T2dXV5izb7oG3V9fMMW3NLknZX5PT4EfAA/ua9HS2sDE02x3oO27RYdnS1XoZzUl3EOPUlMpwqixx7Cpp4Fn/jKrfbNGKciWWHozH7VJvR03jsFTqXr1f2bSD6cjjcjOXKEXg3lrzlJa3+EaGBnyM2GqhdRCG9CVsEoZ0UZjsqxaqSMwtRlNVlfmb59gxM3jd3C3B+4KyqvMB0gtZs2IU8VG+c0G405Iwiypn3285PSKJ/ZzjnV22IA9XNAugJXcA+EA/BOAA="
+  },
+  {
+   "id": "armi-casal-fundadores-backdrop",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-casal-fundadores-backdrop",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-070.jpg",
+    "width": 2731,
+    "height": 4096
+   },
+   "aspect": 0.6667,
+   "focal": "40% 30%",
+   "treatment": "P&B",
+   "alt_suggested": "Casal de fundadores diante do painel do brasao ARMI",
+   "notes": "Pessoas reais (parecem os fundadores). Confirmar autorizacao de imagem.",
+   "dominant": "#34231a",
+   "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAACwBgCdASoYACQAPxFws1KsJaSisBVaqYAiCWIAw2eKBBzQF3CLAkhldNEXNd/S86mmo1wr6t9uvG9RA2XdQAD+9DtlVJZDsf0JNgHodDczr6kpqjE1Fu97kdedxnfxW+6sHMb776BRUUOKW1Lno9vkOk8ZAY90MGYirBr4ohgzcc042P/XKRQl2FVnEHiReE2bu3bLxl17P6B6LpGL3omUGwKlx8ziKFtBd9EzrCgRRdssjBidyAKaZmBNles95UFtrSg7rgpJQ2hIK/++9s4hDOqqDjlh8p6O/eUzjNF29yAA"
+  },
+  {
+   "id": "armi-caneca-brasao",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-caneca-brasao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 2700
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-068.jpg",
+    "width": 2731,
+    "height": 4096
+   },
+   "aspect": 0.6667,
+   "focal": "55% 22%",
+   "treatment": "P&B; caneta dourada pode ficar como unico ponto de calor",
+   "alt_suggested": "Convidada exibe caneca com brasao ARMI diante do painel",
+   "notes": "Convidada identificavel; confirmar autorizacao.",
+   "dominant": "#524139",
+   "lqip": "data:image/webp;base64,UklGRhABAABXRUJQVlA4IAQBAABwBwCdASoYACQAPxF6s1KsJ6SiqrgMAYAiCWIArk+mzmeSATlAs/xEdozbeLjaI3Cmnjxt7L6ebT8q5C8zOsTn4/JwAAD15HLf0VGGf76/LTdS+lq9Oo12EaekQTMBPshWYN3i4fTheWUymz/woxowmuLs7yU3O3IkxcZvZ/oe5CPHyNcHHwOdal9YsT/gce3y4vtYvOHmdIE3aRITqAq8HoQCOqP9ELNWsyQrpKckp6F0LcEKTR9sHtobSCldZxUpEQOUNIw+193jgI+h7UAPFvpUZHlbJd29q/DCDSLhXYnLupVFXKL+jn3CseOPDOknjvAF9Wx2fXFGEr7ofh1lO4ZgAA=="
+  },
+  {
+   "id": "armi-mesa-evento",
+   "section": "04-armi",
+   "priority": "A",
+   "path": "img/armi-mesa-evento",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-074.jpg",
+    "width": 4096,
+    "height": 2731
+   },
+   "aspect": 1.4998,
+   "focal": "50% 55%",
+   "treatment": "P&B quente; levantar sombras",
+   "alt_suggested": "Mesa longa do evento ARMI com cadernos, canetas e canecas do brasao",
+   "notes": "Aplicacao em ambiente, sem rostos.",
+   "dominant": "#693e15",
+   "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAAAwBQCdASoYABAAPxFysFAsJqSisAgBgCIJbACdMoR3AdEZF8RrPD9uCePLqq9dOs00AAD+zGLCfT55PnwxPmVqgcAfvdec1uoFDWwbK3On6Guj9URHWqdoLiffiajySS17F1VsurIStgIM/hVNNzkJO9MEIH6oEOvIq4FzBwGdWMQrsq8NZe/dVd+lmNdCGuASCQw6fQP0uno0sYNSBkih2uJr0gPTPstg6dt8X2LrAAAA"
+  },
+  {
+   "id": "armi-caderno-dourado",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-caderno-dourado",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-076.jpg",
+    "width": 4096,
+    "height": 2731
+   },
+   "aspect": 1.4998,
+   "focal": "40% 55%",
+   "treatment": "P&B; dourado como unico calor",
+   "alt_suggested": "Caderno preto ARMI Club com logotipo dourado e caneta",
+   "notes": "Papelaria, sem rostos.",
+   "dominant": "#663e15",
+   "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBACdASoYABAAPxFwsFAsJiSisAgBgCIJbACdMoACjtGfzI1di0G7XhTAAP4WaUXNT7fOj6RVo2cLu/QpKIQOViB0NsWQGdrWRdv/YXVXFmusJFdYkb1ZrylD5AE4WgGGVjD3gZu9wes6yRN+xAPa4VXtgZcszwAAAA=="
+  },
+  {
+   "id": "armi-caneta",
+   "section": "04-armi",
+   "priority": "C",
+   "path": "img/armi-caneta",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1200
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-078.jpg",
+    "width": 4096,
+    "height": 2731
+   },
+   "aspect": 1.4998,
+   "focal": "35% 60%",
+   "treatment": "P&B",
+   "alt_suggested": "Caneta preta com logotipo ARMI sobre mesa de madeira",
+   "notes": "Detalhe.",
+   "dominant": "#8d5e31",
+   "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwBACdASoYABAAPxFysFAsJqSisAgBgCIJagCdMoADNlEXy4C8Ha3jMIgA/hmXbS39nU7dyoICgQA5GUkxTyuaDchlOz1a8io/j/0+HaO16+oojUE5stR7ZIt7kiqK6Y3Bdg2nJ8MAAA=="
+  },
+  {
+   "id": "armi-brandkit-mockup",
+   "section": "04-armi",
+   "priority": "C",
+   "path": "img/armi-brandkit-mockup",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1019
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-072.jpg",
+    "width": 2520,
+    "height": 1426
+   },
+   "aspect": 1.7672,
+   "focal": "50% 50%",
+   "treatment": "nativo (ja escuro)",
+   "alt_suggested": "Grade de aplicacoes ARMI: camiseta, garrafas, caixa, site",
+   "notes": "Mockup (nao foto).",
+   "dominant": "#28292c",
+   "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQAwCdASoYAA4APxFysFAsJqSisAgBgCIJZwAAN4HK6bn/2x9IxNQA9jzGy5LHogegL6NWKj0oHqOVeMLKkXYBWitW2NRpcGPKEdsbsJ9nrmMRtHJO/8V0bSxbXBcIvAfHNic6KAcuWmNBAE88wWvVuZnoG7Mn9Eej3oXZdx/glvBdXGAAAA=="
+  },
+  {
+   "id": "armi-brasao-esboco-mao",
+   "section": "04-armi|06-sobre",
+   "priority": "A",
+   "path": "img/armi-brasao-esboco-mao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 2.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "30% 45%",
+   "treatment": "P&B; papel/lapis",
+   "alt_suggested": "Mao tatuada desenhando o esboco do brasao ARMI a lapis",
+   "notes": "Melhor imagem de PROCESSO: o traco a mao (liga ao cartazista). Presumo que a mao seja de Nil (confirmar).",
+   "dominant": "#9e9d98",
+   "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoYAA4APxFysFAsJqSisAgBgCIJZACo9CIOgpPx38tOQrCzr5fcAP7AZPIXNug9HcDL4U4IMYhywUeF2rguhu36nD1yHM/VAz/G+bYUlABiWBvn0tKqxxX0aGifybPQNM6O2cmrAhi8W9tTYYYxGI6CWcNpEAAA"
+  },
+  {
+   "id": "armi-brasao-esboco-nanquim",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-brasao-esboco-nanquim",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 12.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "nativo",
+   "alt_suggested": "Brasao ARMI finalizado em nanquim sobre papel branco",
+   "notes": "Passo seguinte do processo (esboco para arte final).",
+   "dominant": "#cdc3bd",
+   "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADwAwCdASoYAA4APxFysFAsJqSisAgBgCIJZAC7ABukHFyHcsvEGCyAAP6aUmd+ZlljST31StnMP48MJoM8sLGpf8ZND5YUdYthhdA+/yf0Sq8wQiDvTVw0/0QedhDpaclE0y6PIOVuyyDxk5eImIQBM+kq9acIQdDUh3qpjLLm3e3U5BEYJRi5jv9qDbHXuGpDAAAA"
+  },
+  {
+   "id": "armi-brasao-ouro-preto",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-brasao-ouro-preto",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 1.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "nativo (preto+dourado ja e monocromatico)",
+   "alt_suggested": "Brasao ARMI em dourado sobre preto",
+   "notes": "Fecho do processo; fundo preto pronto.",
+   "dominant": "#282827",
+   "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQBACdASoYAA4APxF0sVAsJySisAgBgCIJZQAAYfOsJhdDy4Okg8YNvE4IAP7joicaEmbT8ls5X3nNAaWO5CzwnCXbaHHaNMVs3MK1+wk+tk5eiQAAAA=="
+  },
+  {
+   "id": "armi-lacre-dourado",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-lacre-dourado",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 17.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 60%",
+   "treatment": "nativo",
+   "alt_suggested": "Lacre dourado com brasao sobre envelope azul-marinho",
+   "notes": "Aplicacao premium; sem rostos.",
+   "dominant": "#1f1e24",
+   "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYAA4APxFysFAsJqSisAgBgCIJQBfJBDwLWzcWBbkAAP7djGEo7HxiZt3T6lTXIraWrkz0kv+JLLFXG2LXhDqaM5LVGEAAAAA="
+  },
+  {
+   "id": "armi-espaco-brasao-parede",
+   "section": "04-armi",
+   "priority": "C",
+   "path": "img/armi-espaco-brasao-parede",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 18.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "75% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Espaco do evento ARMI com o painel do brasao ao fundo",
+   "notes": "Contexto de ambiente.",
+   "dominant": "#4b2f29",
+   "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADwAwCdASoYAA4APxFysFAsJqSisAgBgCIJQBWABEAb+bTEPP08tYgAAP7pE0CYYdmdWp5r+YvISF6Yq1qxKX+ju6Pt0yLwmjvFoybSk1d99Xm3u6URvS904D2jx8HiJXqIJnnrxFDvsbsLjSSUAKEcjGVJTeE2RJlsJwoogpjKDlamBqAAAA=="
+  },
+  {
+   "id": "armi-caneca-ceramica-familia",
+   "section": "04-armi",
+   "priority": "C",
+   "path": "img/armi-caneca-ceramica-familia",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/armi/Slice 19.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "40% 55%",
+   "treatment": "P&B",
+   "alt_suggested": "Caneca com brasao ARMI ao lado de retrato de familia",
+   "notes": "Porta-retrato com pessoas reais, conferir.",
+   "dominant": "#92714e",
+   "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQAwCdASoYAA4APxFwsFAsJiSisAgBgCIJbACdIExBTT0YRk2/ovAA/s23RX8IsjPyJX2/Zn7uJ/e0KaUWn4GUTy5gka/Mq1E2ld+sZGYOVEQRO9rukOfB+eeuzVni568zA71qZ/ZFLpAkdBuRDAdt1m29Vn+J3zejXPZ09h7N4x4QNDYurFBCAUIVU/xJGGZnakAA"
+  },
+  {
+   "id": "armi-telao-influencia-patrimonio",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-telao-influencia-patrimonio",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 497
+   },
+   "source_original": {
+    "path": "ARMI/Evento ARMI/previews/final/slide-002.png",
+    "width": 4864,
+    "height": 1344
+   },
+   "aspect": 3.619,
+   "focal": "50% 50%",
+   "treatment": "nativo (grafite+dourado)",
+   "alt_suggested": "Slide de telao ARMI: Influencia e patrimonio",
+   "notes": "Faixa ultra-wide 3.6:1; tira full-bleed (palco). Fonte: previews finais do telao (nao e foto do evento).",
+   "dominant": "#14191f",
+   "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAgCdASoYAAcAPxFysFCsJqSisAgBgCIJZwC3uC0kAAD+74Glu6k+6hGtjUNTMAA="
+  },
+  {
+   "id": "armi-telao-family-equity",
+   "section": "04-armi",
+   "priority": "B",
+   "path": "img/armi-telao-family-equity",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 497
+   },
+   "source_original": {
+    "path": "ARMI/Evento ARMI/previews/final/slide-010.png",
+    "width": 4864,
+    "height": 1344
+   },
+   "aspect": 3.619,
+   "focal": "50% 50%",
+   "treatment": "nativo",
+   "alt_suggested": "Slide de telao ARMI: Family Equity",
+   "notes": "Idem. Slide 010.",
+   "dominant": "#11161d",
+   "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAgCdASoYAAcAPxFysFAsJqSisAgBgCIJZwCzgC0kAAD+76U7fA7skxrUsz1Y2lLaEAAA"
+  },
+  {
+   "id": "fm-area-do-futuro-lounge",
+   "section": "04-fm",
+   "priority": "B",
+   "path": "img/fm-area-do-futuro-lounge",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-014.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 55%",
+   "treatment": "P&B; azul vira grafite",
+   "alt_suggested": "Lounge Area do Futuro com painel de globo e mesa",
+   "notes": "Ambiente do Encontro.",
+   "dominant": "#536175",
+   "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoYAA4APxFysFAsJqSisAgBgCIJZACdIMgCcNy2+w9hz4IUAAD+v8Yp+MxJv2s+v/bZzWGTELlONv6e05ulINqZzvZ86h0lsZq1j91IYI564nD63gTdC4YgQfpMfE3ZA1O1XVgckQfAAnDelipXTVhLDq58mKwA"
+  },
+  {
+   "id": "fm-area-do-futuro-palco",
+   "section": "04-fm",
+   "priority": "C",
+   "path": "img/fm-area-do-futuro-palco",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-016.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 55%",
+   "treatment": "P&B",
+   "alt_suggested": "Palco Area do Futuro com flores e esferas de luz",
+   "notes": "",
+   "dominant": "#4e5665",
+   "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACQBACdASoYAA4APxFysFAsJqSisAgBgCIJZACdMoGv/gNpb9QFeag5pki5cgAA/tvKDQPVhxUn2GBuipijbvl1M7uy4tA/gXtqU4v4amTG0hEuzmkUAk9BOvh7a7xQnWGnhN/bdjFw3dj2vIcbEYN4QfFW6LlzA8rhTrjssmkafsvLlJyXbBoaEAA="
+  },
+  {
+   "id": "fm-respect-ambientacao",
+   "section": "04-fm",
+   "priority": "B",
+   "path": "img/fm-respect-ambientacao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-026.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 40%",
+   "treatment": "P&B",
+   "alt_suggested": "Ambientacao Respect com pufes e maos que se tocam",
+   "notes": "Pessoas ao fundo, desfocadas; risco baixo.",
+   "dominant": "#5a4e49",
+   "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQAwCdASoYAA4APxFysFAsJqSisAgBgCIJQAAKVDYNMmoumltE+LAA/uwDsCTve9MvcVrM5dHfjsDjrFcQ1FMRAp1TNLkz18/YIKbtzjz9J2ZS/Xdk6LISeSYRvvf3JKf3PXFlaBB99y+SikaFhDoOXsX+72YGk820kEJICuZ9VpASLp/O65pbBWzGs5uh4AqDAAAA"
+  },
+  {
+   "id": "fm-sonho-ancestrais-painel",
+   "section": "04-fm",
+   "priority": "A",
+   "path": "img/fm-sonho-ancestrais-painel",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-028.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "58% 50%",
+   "treatment": "P&B com vermelho preservado no painel (vermelho ja e o sinal)",
+   "alt_suggested": "Painel vermelho \"Eu sou o sonho das minhas ancestrais\" com apresentadora",
+   "notes": "Forte e naturalmente vermelho; ancora a citacao do organismo vivo.",
+   "dominant": "#87463c",
+   "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoYAA4APxFysFAsJqSisAgBgCIJagCdMoACs+7fpVYffBB2TWgAAP7uoY8sY8zZnp4hIPmhOqkdsauGsob/x3BYaqfEXtaDdWD6G5NZaPumkBcquzKrB7qN8Lefz534uHtOGLNuyQOMYuom4LjMJuUKP1mSrpU/uROoIe5fJrdntCAA"
+  },
+  {
+   "id": "fm-corpo-mente-palco",
+   "section": "04-fm",
+   "priority": "B",
+   "path": "img/fm-corpo-mente-palco",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-054.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Palco Corpo Mente Espirito com cenografia de colagem e vegetacao",
+   "notes": "",
+   "dominant": "#62564d",
+   "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBACdASoYAA4APxFysFAsJqSisAgBgCIJbAC7ACHSzlJ4cm+wkImdnAD+v55iXEzbuk3xB4rfdtynh8QLN7nhgcMqapVqvi6Hl9/6qaOUi3KCrhrPhR58j+ktvE/xNtMM2eoGjGVX5QCyJK0COHubQjtjmPHs32fUs3cy2c834mdd1+nDjQAKFjeg50LKe+yFM21H7PUTA7mzXIAAAA=="
+  },
+  {
+   "id": "fm-cartazes-colagem-padrao",
+   "section": "04-fm",
+   "priority": "A",
+   "path": "img/fm-cartazes-colagem-padrao",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 729
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-056.jpg",
+    "width": 2448,
+    "height": 991
+   },
+   "aspect": 2.4702,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Colagem do padrao visual de cartazes do Feminino Moderno",
+   "notes": "Layout do sistema (2448x991, 2.47:1); mostra o padrao visual. Faixa larga.",
+   "dominant": "#a49991",
+   "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBACdASoYAAoAPxFwsFAsJiSisAgBgCIJaACdMoM6AE4jCtE8S2EbM2seAAD4xhoQiBMte+0yk1gJKUyaEhWBCJZHVy8Uw2rLOhtnAsAsBI6akeimEofNnh1a071o8xlx/nXIb7X6LlbjWQ8Vmo2AuUzEU9i3OxT8V+J+YXpb0V2N6LXgAA=="
+  },
+  {
+   "id": "fm-cartazes-jardim-noite",
+   "section": "04-fm",
+   "priority": "A",
+   "path": "img/fm-cartazes-jardim-noite",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-058.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 55%",
+   "treatment": "P&B; rosas viram cinza",
+   "alt_suggested": "Estrutura com cartazes e flores do Feminino Moderno a noite",
+   "notes": "Melhor foto de ocupacao do espaco pela marca.",
+   "dominant": "#51413a",
+   "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAQBACdASoYAA4APxFwsFAsJiSisAgBgCIJQBbZMYiY67yKehLj1S8YAAD+wasq9yb7xcdTM2YrNp+Iw8UKmHzeWN+OhdMQMCUWhP8vjSTM315OIjt8PCLv/fYox9xZ1yDCsgB3zxTpEYPBFnMq/bAZ7E+O/0rhL6CJVqOvFb3w6EzNjQj0TORH+2BB4QfIldU6Lh5F3Xxj5QfIosyEgAAA"
+  },
+  {
+   "id": "fm-cartazes-close-novo-sempre-melhor",
+   "section": "04-fm|06-sobre",
+   "priority": "A",
+   "path": "img/fm-cartazes-close-novo-sempre-melhor",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-060.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 45%",
+   "treatment": "P&B alto contraste; tipografia gigante",
+   "alt_suggested": "Close dos cartazes \"O novo e sempre melhor\" e \"Feminino Moderno\"",
+   "notes": "Cartaz tipografico gigante: melhor ponte com a historia de cartazista.",
+   "dominant": "#604b50",
+   "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABQBACdASoYAA4APxFysFAsJqSisAgBgCIJQBgbsYTZqIfWzpFGLvYnBoyIAM2bpEtm5Sow1sbnLC8PDZ+uDxwlSljlknpFIPM71e2bjNWfy3TgtaxVUDAF3ZxBO2wfQr0+QqAEwqC4jkvUSdgv64OvKTkqebfv4Y2dS9nFGv1VLTd3S5dcFWRp2NsU/8VhsHpO0fCg0Wina5WVAAA="
+  },
+  {
+   "id": "fm-parede-verde-cartazes-o",
+   "section": "04-fm",
+   "priority": "B",
+   "path": "img/fm-parede-verde-cartazes-o",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "C:/Users/Windows/AppData/Local/Temp/claude/D--Projetos-ClaudeCode-ONILDO/2b3b0113-779b-4bd5-b05b-a0c8452f093d/scratchpad/pimg/i-062.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "55% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Parede verde com cartazes e letra O em escultura branca",
+   "notes": "",
+   "dominant": "#423f35",
+   "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoYAA4APxFysFAsJqSisAgBgCIJZwAD5dHF3lI0Telud6+V3YAA/uW807Bkb5jjjty4N9S1628HDCEpcP5uQPrGfaC6nYH1pwzlsUuwq6vfJ4N9M9K1BxKmilIe5RRcEyYYhPTcJC0TC7HdFMGtUpsK7SQwbp2+WAUTZjZFPeKrO7kPfHMpgGpshf/j9CnSbHAAAA=="
+  },
+  {
+   "id": "fm-mockup-fachadas-palco",
+   "section": "04-fm",
+   "priority": "C",
+   "path": "img/fm-mockup-fachadas-palco",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/proposta-comercial/Proposta comercial - posicionamento de marca/Cases/47 1.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "nativo (preto)",
+   "alt_suggested": "Mockup de fachadas e palco do Encontro Nacional Feminino Moderno",
+   "notes": "Mockup, nao evento real.",
+   "dominant": "#2c2722",
+   "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoYAA4APxFysFAsJqSisAgBgCIJYwAAUqqSKmLWrHeR4PAA/vDfE9UFhv8X3A5XT6NSBIJ/bIFqiSkVC2euUvC6ERP0GXdj9C2ayl+B+od8DgomvfvNgLIy4+5eTKlwItgsAAAA"
+  },
+  {
+   "id": "fm-mockup-sacola-ancestrais",
+   "section": "04-fm",
+   "priority": "B",
+   "path": "img/fm-mockup-sacola-ancestrais",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/proposta-comercial/Proposta comercial - posicionamento de marca/Cases/52 1.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Sacolas de algodao com borboleta e beija-flor, Feminino Moderno",
+   "notes": "Mockup; aplicacao editorial bonita.",
+   "dominant": "#bab5b2",
+   "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwAwCdASoYAA4APxFysFAsJqSisAgBgCIJZwAAPWXjiZEQ64AA/WTrKKx+WHdLHT3WGk+vEGpdI6+XMkGHy0UHveUHmvQJ24jylCMedyjVMd+99EI8zBjAkreXdZM7SHU3PEvKlJEsAAAA"
+  },
+  {
+   "id": "fm-mockup-cadernos",
+   "section": "04-fm",
+   "priority": "C",
+   "path": "img/fm-mockup-cadernos",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/proposta-comercial/Proposta comercial - posicionamento de marca/Cases/53 1.jpg",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Tres cadernos Feminino Moderno com beija-flor, borboleta e coracao",
+   "notes": "Mockup.",
+   "dominant": "#6e5f5d",
+   "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQAwCdASoYAA4APxFysFAsJqSisAgBgCIJQBWABDvbfH+FI6Ce0AAA/cPWwfqRuzIS7Esj1IUVtJwEUclg71bPAr+gIM1sng0mTLPmIZE4znvjy9U9qb4gYAA9ki8EJk/KXHBr474vQmeUb/t04RtBQ9fIJoceFtq7naTs8IMFtM2g0w4y3nbF0Pi1XV9eOrofHkyAAAA="
+  },
+  {
+   "id": "cafe-secrets-hero-bw",
+   "section": "04-outros",
+   "priority": "A",
+   "path": "img/cafe-secrets-hero-bw",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/Café-secrets/Slice 1.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 45%",
+   "treatment": "nativo (ja P&B)",
+   "alt_suggested": "Cafe Secrets: xicara e graos de cafe sobre silhueta em preto e branco",
+   "notes": "Marca sensual/provocativa. Avaliar adequacao com Nil.",
+   "dominant": "#282827",
+   "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoYAA4APxFysFAsJqSisAgBgCIJaQAAXBh/TDFAH1zgD0YoAAD+8NF4ZSc+85eCqOHXvcmmB9eRJVoiwbtkV2LwQ73l1OnaN/7DWDDtFCfD3p4wzDLy32TLtTRcKgBUpdBgAA=="
+  },
+  {
+   "id": "cafe-secrets-ooh-metro",
+   "section": "04-outros",
+   "priority": "B",
+   "path": "img/cafe-secrets-ooh-metro",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/Café-secrets/Slice 24.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Cartaz Cafe Secrets em vagao de metro",
+   "notes": "Mockup OOH.",
+   "dominant": "#68655f",
+   "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoYAA4APxFysFAsJqSisAgBgCIJZwAATBFPpwyx9VWJ6i4AAPadDaquBW55p2kAUMJmSMsuKYH5zYCglrzPaozdfLkRXjGiCW8vHg8yyAMZkUCVsi81HM//v6Pt+0yuYLFn8T/EpbOOi3Q5I1M8n/rdeAem3gAA"
+  },
+  {
+   "id": "cafe-secrets-ooh-ponto-onibus",
+   "section": "04-outros",
+   "priority": "B",
+   "path": "img/cafe-secrets-ooh-ponto-onibus",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/Café-secrets/Slice 25.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "nativo (vermelho ja e o acento)",
+   "alt_suggested": "Cartazes Cafe Secrets vermelhos em ponto de onibus",
+   "notes": "Mockup OOH; vermelho da marca do cliente.",
+   "dominant": "#675b56",
+   "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYAA4APxFysFAsJqSisAgBgCIJYgAAQdR1UEufM5ZRtN4AAP6Akv5o/diZ7BIqKfvnYZbDBu0+a3GMcQ9cQ3ex7JeIBSSL4gaG2fJCosDth9exCb7LU1mesegdTY7RKubodOSo5CWI1X9FQAA="
+  },
+  {
+   "id": "escola-vestir-hero",
+   "section": "04-outros",
+   "priority": "B",
+   "path": "img/escola-vestir-hero",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/escola-do-vestir/01.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 40%",
+   "treatment": "P&B",
+   "alt_suggested": "Escola do Vestir: duas mulheres em atelie com monograma EV",
+   "notes": "Fotos aparentemente de banco/IA (confirmar).",
+   "dominant": "#373436",
+   "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoYAA4APxFysFAsJqSisAgBgCIJYwDLLCG6479E46cacFxzyvIAAP7vBuOwqttqsu3NoJN6najOxEW3XGCn0pq96JxMUFunG8lQCZ5EjY+roRt+uK+JlsPEtrrhUdziQC23u1xZZfxwrXZaRwXeAAAA"
+  },
+  {
+   "id": "escola-vestir-outdoor",
+   "section": "04-outros",
+   "priority": "C",
+   "path": "img/escola-vestir-outdoor",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/escola-do-vestir/23.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Outdoors da Escola do Vestir",
+   "notes": "Mockup.",
+   "dominant": "#7a7463",
+   "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoYAA4APxFysFAsJqSisAgBgCIJYwCsACKKTgkuZK/MS6FsvcAA/tHHycgldUbbGCGU3AyJ9CNdHGNqT0OqXMiApYa+ZpNYOLEkEBm3Rq2UBPrwftRmlO6qHbMjfrhRkOrnUDXfMWTKDF5+A+751lz9sRMBrgx+GLBdUmng8HGQpJtJe40lh3JSAAA="
+  },
+  {
+   "id": "escola-vestir-backdrop-evento",
+   "section": "04-outros",
+   "priority": "A",
+   "path": "img/escola-vestir-backdrop-evento",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/escola-do-vestir/35.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B; padrao geometrico colorido vira cinza",
+   "alt_suggested": "Backdrop de evento da Escola do Vestir com silhuetas",
+   "notes": "Mockup; bom para evento.",
+   "dominant": "#8e8984",
+   "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBACdASoYAA4APxFwsFAsJiSisAgBgCIJZQDA3CHiD3i3oZBPhktUQAD+6SwCOjeIm/aZfiqlcjEcUrZrgIR+4+urr5cIXAV71OEkRDGbXHdjkViDoVVg3llKacNv3jPz82j6GxbqEIZS/eEYRf3ETjL7ypUCr0VscZ/lX53AHEfAAAA="
+  },
+  {
+   "id": "escola-vestir-rollups",
+   "section": "04-outros",
+   "priority": "C",
+   "path": "img/escola-vestir-rollups",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/escola-do-vestir/32.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "nativo (claro)",
+   "alt_suggested": "Rollups Classic, Gold e Premium da Escola do Vestir",
+   "notes": "Fundo claro; usar em secao gelo.",
+   "dominant": "#c5c0b6",
+   "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoYAA4APxFysFAsJqSisAgBgCIJZQC/OBjFFId3zmtjwAD+7WFm1u4v4NzxwJvfTrqxIKj4NSzx5QTXKbROC3DnfWBvL8wr2d+s+AnpnstqvwcbB9gftpIkk/JU6ilnIYLwgNYA"
+  },
+  {
+   "id": "codigos-familia-palco",
+   "section": "04-outros",
+   "priority": "A",
+   "path": "img/codigos-familia-palco",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/Codigos da familia/Slice 24.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B; verde vira grafite",
+   "alt_suggested": "Palco da imersao Codigos da Familia com painel verde e cadeiras",
+   "notes": "Mockup de palco.",
+   "dominant": "#586058",
+   "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoYAA4APxFysFAsJqSisAgBgCIJQBjiiYhfG/TwDxHy5+VogAD+6U3FVHuZSCkX86W48j7E5enOfFl9pugaWj62CMxtuYeHfHu5cXgZ69+z1Cf2lQQpI3oKkMiF59lcrvnQLpkvzAVWKX6svWSr1wAA"
+  },
+  {
+   "id": "codigos-familia-kit-caixa",
+   "section": "04-outros",
+   "priority": "C",
+   "path": "img/codigos-familia-kit-caixa",
+   "widths": [
+    480,
+    800,
+    1200,
+    1800
+   ],
+   "intrinsic": {
+    "width": 1800,
+    "height": 1013
+   },
+   "source_original": {
+    "path": "PIXEL-RAIN/SITE-PIXEL-V2/public/assets/studio/Codigos da familia/Slice 21.png",
+    "width": 1920,
+    "height": 1080
+   },
+   "aspect": 1.7778,
+   "focal": "50% 50%",
+   "treatment": "P&B",
+   "alt_suggested": "Caixa-kit da imersao Codigos da Familia com adesivos e cartoes",
+   "notes": "Mockup.",
+   "dominant": "#a89071",
+   "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwBACdASoYAA4APxFysFAsJqSisAgBgCIJYgCdMoCGA1gBIioz3oSZLJ5NvkKAAOAK3EYIRDm0oZaXSHpYXjXr705Kk3Fqy2alG+cp4SX2fB2c9gb/T7RBHQQSrQKajuL5/wUVJhZ7vn3rjz7+qr6dzjRjUlJdiD+7b66yCoeaQ2/JnC83wAAA"
+  }
+ ],
+ "videos": [
+  {
+   "id": "armi-brasao-maria",
+   "section": "04-armi",
+   "orientation": "portrait 9:16",
+   "duration_s": 8,
+   "source": "ONILDO/depomentos-armi/maria.MOV",
+   "source_window": "00:14.5-00:22.5",
+   "audio": false,
+   "hdr_tonemapped": "HLG->SDR bt709",
+   "mp4": {
+    "720": "video/armi-brasao-maria-720.mp4",
+    "1080": "video/armi-brasao-maria-1080.mp4"
+   },
+   "webm": {
+    "720": "video/armi-brasao-maria-720.webm",
+    "1080": "video/armi-brasao-maria-1080.webm"
+   },
+   "poster": {
+    "webp": "video/armi-brasao-maria-poster.webp",
+    "jpg": "video/armi-brasao-maria-poster.jpg",
+    "width": 1080,
+    "height": 1920
+   },
+   "dimensions": {
+    "720": [
+     720,
+     1280
+    ],
+    "1080": [
+     1080,
+     1920
+    ]
+   },
+   "focal": "50% 45%",
+   "what": "Convidada diante do brasao ARMI Club no LED do evento; Nil com iPad. Na fala original, elogio ao brasao.",
+   "loop_note": "Corte seco; usar fade curto nas pontas ou tocar uma vez."
+  },
+  {
+   "id": "armi-pessoas-certas-rodrigao",
+   "section": "04-armi",
+   "orientation": "portrait 9:16",
+   "duration_s": 8,
+   "source": "ONILDO/depomentos-armi/rodrigao.MOV",
+   "source_window": "00:18.5-00:26.5",
+   "audio": false,
+   "hdr_tonemapped": "HLG->SDR bt709",
+   "mp4": {
+    "720": "video/armi-pessoas-certas-rodrigao-720.mp4",
+    "1080": "video/armi-pessoas-certas-rodrigao-1080.mp4"
+   },
+   "webm": {
+    "720": "video/armi-pessoas-certas-rodrigao-720.webm",
+    "1080": "video/armi-pessoas-certas-rodrigao-1080.webm"
+   },
+   "poster": {
+    "webp": "video/armi-pessoas-certas-rodrigao-poster.webp",
+    "jpg": "video/armi-pessoas-certas-rodrigao-poster.jpg",
+    "width": 1080,
+    "height": 1920
+   },
+   "dimensions": {
+    "720": [
+     720,
+     1280
+    ],
+    "1080": [
+     1080,
+     1920
+    ]
+   },
+   "focal": "45% 45%",
+   "what": "Nil abraca Rodrigao (fundador) diante do painel \"As pessoas certas.\"; gargalhada. Coincide com a fala \"tudo que tem aqui tem a digital do Nil\".",
+   "loop_note": "Corte seco; melhor clip humano/prova."
+  },
+  {
+   "id": "armi-telao-casa-mariadel",
+   "section": "04-armi",
+   "orientation": "portrait 9:16",
+   "duration_s": 8,
+   "source": "ONILDO/depomentos-armi/mari-adel.MOV",
+   "source_window": "00:15-00:23",
+   "audio": false,
+   "hdr_tonemapped": "HLG->SDR bt709",
+   "mp4": {
+    "720": "video/armi-telao-casa-mariadel-720.mp4",
+    "1080": "video/armi-telao-casa-mariadel-1080.mp4"
+   },
+   "webm": {
+    "720": "video/armi-telao-casa-mariadel-720.webm",
+    "1080": "video/armi-telao-casa-mariadel-1080.webm"
+   },
+   "poster": {
+    "webp": "video/armi-telao-casa-mariadel-poster.webp",
+    "jpg": "video/armi-telao-casa-mariadel-poster.jpg",
+    "width": 1080,
+    "height": 1920
+   },
+   "dimensions": {
+    "720": [
+     720,
+     1280
+    ],
+    "1080": [
+     1080,
+     1920
+    ]
+   },
+   "focal": "50% 40%",
+   "what": "Casal de membros diante do LED com foto de familia e a frase \"A casa e o seu primeiro negocio\".",
+   "loop_note": "Corte seco."
+  }
+ ],
+ "quotes": [
+  {
+   "id": "q-rodrigao-digital",
+   "speaker": "Rodrigao, fundador do ARMI",
+   "video": "rodrigao.MOV",
+   "t": "00:00:18,460-00:00:25,460",
+   "text": "O Neil é muito modesto, o Neil está com a gente há um tempo e tudo que tem aqui tem a digital do Neil.",
+   "note": "Transcricao escreve Neil; grafia correta Nil. Melhor citacao (fundador, especifica). Conferir audio."
+  },
+  {
+   "id": "q-rodrigao-brasao",
+   "speaker": "Rodrigao, fundador do ARMI",
+   "video": "rodrigao.MOV",
+   "t": "00:00:34,000-00:00:42,560",
+   "text": "O primeiro desenho que você mandou, a gente fez mínimos ajustes ali e já saiu o brasão que a gente usa hoje e que representa muito para a gente.",
+   "note": "Prova de acerto de primeira; conecta ao esboco a mao."
+  },
+  {
+   "id": "q-juan",
+   "speaker": "Juan Victor, membro",
+   "video": "juan-victor.MOV",
+   "t": "00:01:04,720-00:01:06,680",
+   "text": "Você tem que saber que tudo comunica.",
+   "note": "Curta e citavel."
+  },
+  {
+   "id": "q-heloisa",
+   "speaker": "Heloisa Ciarini, membro",
+   "video": "heloisa-ciarini.MOV",
+   "t": "00:01:35,420-00:01:40,140",
+   "text": "Porque as imagens, elas comunicam sem precisar da fala.",
+   "note": "Curta e citavel; tema central da LP."
+  },
+  {
+   "id": "q-lu-brito",
+   "speaker": "Luciana Brito, membro",
+   "video": "luciana-brito.MOV",
+   "t": "00:00:12,200-00:00:24,090",
+   "text": "esse brasão então é fantástico. Ele traz uma força [...] um poder, uma elegância.",
+   "note": "Emenda com reticencias; conferir audio."
+  },
+  {
+   "id": "q-maria",
+   "speaker": "Maria, membro",
+   "video": "maria.MOV",
+   "t": "00:01:49,000-00:02:02,380",
+   "text": "se você está preparado para expressar na sua marca, na sua imagem, aquilo que há de mais valor dentro da sua empresa, pode contratar, porque é isso que ele entrega.",
+   "note": "Recomendacao direta (mais forte comercialmente). Recorte curto: pode contratar, porque é isso que ele entrega."
+  },
+  {
+   "id": "q-evandro",
+   "speaker": "Evandro, membro",
+   "video": "evandro1.MOV",
+   "t": "00:00:38,100-00:00:44,440",
+   "text": "você olha isso aqui, algo bem conservado, limpo, então você fala assim, tô lidando com gente grande.",
+   "note": "Percepcao de nivel em segundos (tema da LP). Refere-se ao evento inteiro, nao so ao visual."
+  }
+ ],
+ "brand": {
+  "logos": {
+   "white": [
+    "brand/logo-white-480.webp",
+    "brand/logo-white-960.webp",
+    "brand/logo-white-480.png",
+    "brand/logo-white-960.png"
+   ],
+   "black": [
+    "brand/logo-black-480.webp",
+    "brand/logo-black-960.webp",
+    "brand/logo-black-480.png",
+    "brand/logo-black-960.png"
+   ],
+   "aspect": 7.85,
+   "intrinsic_960": [
+    960,
+    122
+   ],
+   "icons": [
+    "brand/ICONE WHITE.svg",
+    "brand/ICONE BLACK.svg"
+   ]
+  }
+ },
+ "gaps": [
+  "sem foto de Nil com pincel/cartaz de varejo (Assai/Extra)",
+  "sem foto de Nil de perfil trabalhando ao vivo alem dos videos",
+  "fotos do Feminino Moderno tem no maximo 1920px de largura"
+ ]
+}

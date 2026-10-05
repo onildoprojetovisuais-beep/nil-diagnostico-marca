@@ -1,6 +1,7 @@
 node_modules
 dist
-assets/
+assets/*
+!assets/manifest.json
 _planning/
 .env*
 
