@@ -22,10 +22,19 @@ export async function submitLead(payload) {
       body: FORMAT === 'json' ? JSON.stringify(payload) : new URLSearchParams(payload),
     });
     if (!res.ok) {
+      // `vite dev` não serve /api: em desenvolvimento, simula sucesso (use `vercel dev` para o fluxo real)
+      if (res.status === 404 && CONFIG.ENV !== 'production') {
+        console.warn('[lead:dry-run] /api/diagnostico não existe neste servidor (use `vercel dev`). Simulando sucesso.', payload);
+        return { ok: true, dryRun: true };
+      }
       const e = new Error('HTTP_' + res.status);
-      e.reason = res.status >= 500 ? 'http_5xx' : 'http_4xx';
+      e.reason = res.status === 429 ? 'rate_limited' : res.status >= 500 ? 'http_5xx' : 'http_4xx';
       throw e;
     }
+    // sucesso só quando o servidor confirma explicitamente
+    let j = null;
+    try { j = await res.json(); } catch (e) {}
+    if (!j || j.ok !== true) { const e = new Error('NO_CONFIRMATION'); e.reason = 'no_confirmation'; throw e; }
     return { ok: true };
   } catch (err) {
     if (err.name === 'AbortError') { const e = new Error('TIMEOUT'); e.reason = 'timeout'; throw e; }

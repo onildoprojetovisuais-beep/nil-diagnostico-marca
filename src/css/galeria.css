@@ -103,3 +103,45 @@
   .gal__item--hero { --h: 60svh; }
   .gal--anim .gal__title { font-size: clamp(1.75rem, 3.4vw, 2.5rem); }
 }
+
+/* ---------- botão "Ver projeto" (abre a lightbox com todas as imagens) ---------- */
+.gal__more { margin-top: 10px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0; background: none; border: 0; border-bottom: 1px solid var(--gelo);
+  color: var(--gelo); font: 600 var(--t-body)/1.2 var(--f-sans); cursor: pointer; touch-action: manipulation; pointer-events: auto; width: fit-content; }
+.gal__more:hover { color: var(--oxido-txt-escuro); border-color: var(--oxido); }
+.gal__more:hover .cta__seta { transform: translateX(4px); }
+.gal__more:focus-visible { outline: var(--traco) solid var(--oxido); outline-offset: 4px; }
+.gal__case--feat .gal__title { font-size: clamp(2.25rem, 6vw, 4.5rem); }
+.gal__case--feat .gal__count { color: var(--oxido-txt-escuro); }
+@media (min-width: 768px) {
+  .gal__case--feat .gal__item--hero { --w: 58vw; --h: 56svh; }
+  .gal__case--feat .gal__item--l { --w: 44vw; --h: 48svh; }
+  .gal--anim .gal__case--feat .gal__track { padding-top: calc(clamp(24px, 5svh, 56px) + 290px); }
+}
+@media (min-width: 1024px) {
+  .gal--anim .gal__case--feat .gal__track { padding-top: calc(var(--sticky-h) + 16px + 290px); }
+}
+
+/* ---------- dinâmica (só no modo animado; transform no botão/legenda para não afetar a medição do scroll) ----------
+   espalha: itens partem comprimidos junto ao hero e abrem com o progresso do case (--case-p, escrito pelo JS)
+   profundidade: sobe/desce em sentidos alternados; hover/foco: expande o item e recua os vizinhos */
+.gal--anim .gal__case { --sg: -1; }
+.gal--anim .gal__case[data-dir="ltr"] { --sg: 1; }
+.gal--anim .gal__btn, .gal--anim .gal__cap {
+  transform: translate3d(calc((1 - var(--case-p, 1)) * var(--i) * var(--sg) * 3.4vw), calc((var(--case-p, .5) - .5) * var(--par) * 9svh), 0); }
+.gal--anim .gal__btn { transition: scale .55s var(--ease-out), box-shadow .55s var(--ease-out); }
+.gal--anim .gal__btn .pic { transition: opacity .4s var(--ease-out), filter .4s var(--ease-out); }
+.gal--anim .gal__item:has(.gal__btn:hover), .gal--anim .gal__item:has(.gal__btn:focus-visible) { z-index: 7; }
+@media (hover: hover) {
+  .gal--anim .gal__btn:hover, .gal--anim .gal__btn:focus-visible { scale: 1.14; box-shadow: 0 30px 70px -20px rgba(0, 0, 0, .75); }
+  .gal--anim .gal__track:has(.gal__btn:hover) .gal__btn:not(:hover) .pic { opacity: .42; filter: saturate(.6); }
+}
+@media (prefers-reduced-motion: reduce) { .gal--anim .gal__btn, .gal--anim .gal__cap { transform: none; } }
+
+/* header fixo (60px) também no mobile: o palco fixado precisa começar abaixo dele */
+@media (max-width: 1023px) {
+  .gal--anim .gal__meta { padding-top: calc(var(--hdr-h) + max(8px, 1.5svh)); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gal--anim .gal__meta { top: calc(var(--hdr-h) + 12px); padding-top: 0; }
+  .gal--anim .gal__track { padding-top: calc(var(--hdr-h) + 12px + 132px); }
+}

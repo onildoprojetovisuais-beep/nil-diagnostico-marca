@@ -6,13 +6,17 @@ import './css/galeria-motion.css';
 import './css/galeria-lightbox.css';
 import { pageView, loadProviders } from './js/track.js';
 import { initCta } from './js/cta.js';
+import { initNav } from './js/nav.js';
 import { initForm } from './js/form.js';
 import { initVideos } from './js/media.js';
 import { initSinais } from './js/sinais.js';
 import { initGaleria } from './js/galeria.js';
+import { initTipografia } from './js/tipografia.js';
 
+initTipografia();
 pageView();
 initCta();
+initNav();
 initForm();
 initVideos();
 initSinais();

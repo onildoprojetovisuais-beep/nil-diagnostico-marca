@@ -16,7 +16,7 @@ const $$ = (s, c = document) => gsap.utils.toArray(s, c);
 /* Reveal de headline por máscara de linha (aria-label no original, linhas aria-hidden) */
 function revealHeadline(el, { start = 'top 85%', dur = 1.0, stagger = 0.09 } = {}) {
   SplitText.create(el, {
-    type: 'lines', mask: 'lines', linesClass: 'ln', maskClass: 'ln-mask', autoSplit: true, aria: 'auto',
+    type: 'lines', mask: 'lines', reduceWhiteSpace: false, linesClass: 'ln', maskClass: 'ln-mask', autoSplit: true, aria: 'auto',
     onSplit: (self) => gsap.from(self.lines, { yPercent: 105, duration: dur, ease: EASE.out, stagger, scrollTrigger: { trigger: el, start, once: true } }),
   });
 }
@@ -72,14 +72,48 @@ function diagnostico(desktop) {
   }
 }
 
+/* 01b: declaração editorial — palavras acendem com a rolagem (cor final de cada palavra vem do CSS) */
+function intro(desktop) {
+  const decl = $('#intro .intro__decl'); if (!decl) return;
+  const ps = $$('p', decl);
+  ps.forEach((p) => p.setAttribute('aria-label', p.textContent.replace(/\s+/g, ' ').trim()));
+  const wrapWords = (node) => {
+    [...node.childNodes].forEach((n) => {
+      if (n.nodeType === 3) {
+        const f = document.createDocumentFragment();
+        n.textContent.split(/([ \t\r\n]+)/).forEach((t) => {
+          if (!t) return;
+          if (/^[ \t\r\n]+$/.test(t)) { f.append(' '); return; }
+          const w = document.createElement('span'); w.className = 'fw'; w.setAttribute('aria-hidden', 'true'); w.textContent = t; f.append(w);
+        });
+        n.replaceWith(f);
+      } else if (n.nodeType === 1) wrapWords(n);
+    });
+  };
+  ps.forEach(wrapWords);
+  const ws = $$('.fw', decl);
+  const final = ws.map((w) => getComputedStyle(w).color);
+  gsap.set(ws, { color: DIM });
+  const resto = $('#intro .intro__texto');
+  const build = (stagger, st) => {
+    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: st });
+    tl.to(ws, { color: (i) => final[i], stagger });
+    // a linha pequena + assinatura surgem só quando "consegue ver." termina de acender
+    if (resto) tl.fromTo(resto, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 1.5 });
+  };
+  if (resto) gsap.set(resto, { opacity: 0, y: 16 });
+  if (desktop) build(0.5, { trigger: '#intro .wrap', start: 'center center', end: '+=110%', pin: true, scrub: 0.5, anticipatePin: 1 });
+  else build(0.4, { trigger: decl, start: 'top 80%', end: 'bottom 30%', scrub: true });
+}
+
 /* 06: traço de pincel + pergunta final cinética (palavra a palavra, scrub) */
 function sobre(desktop) {
   const pincel = $('#sobre .pincel');
   if (pincel) gsap.fromTo(pincel, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: EASE.inout, scrollTrigger: { trigger: pincel, start: 'top 88%', once: true } });
   $$('#sobre .prosa p').forEach((p) => gsap.from(p, { opacity: 0, y: 20, duration: 0.7, ease: EASE.out, scrollTrigger: { trigger: p, start: 'top 90%', once: true } }));
   const q = $('#sobre [data-final-question]'); if (!q) return;
-  const label = q.textContent.replace(/\s+/g, ' ').trim();
-  q.setAttribute('aria-label', label);
+  const label = q.textContent.replace(/[ \t\r\n]+/g, ' ').trim();
+  q.setAttribute('aria-label', label.replace(/ /g, ' '));
   q.innerHTML = label.split(' ').map((w) => `<span class="fw" aria-hidden="true">${w}</span>`).join(' ');
   const ws = $$('.fw', q);
   // palavras "apagadas" em cinza AA (>= 4,5:1 sobre grafite) e "acesas" em gelo
@@ -148,6 +182,7 @@ function init() {
     reveals();
     marks();
     parallax(desktop ? 6 : 3);
+    intro(desktop);
     sobre(desktop);
     formCta();
   });

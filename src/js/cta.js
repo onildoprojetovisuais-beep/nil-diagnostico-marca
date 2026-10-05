@@ -8,9 +8,11 @@ let kbdOpen = false;
 const ROOT = document.documentElement;
 let anim = 0, tok = 0;
 
+function headerH() { const h = $('#site-header .site-header__bar'); return h ? h.offsetHeight : 0; }
+
 function targetTop() {
   const sec = $('#formulario');
-  return Math.max(0, Math.round(sec.getBoundingClientRect().top + scrollY - (innerWidth >= 1024 ? 64 : 0)));
+  return Math.max(0, Math.round(sec.getBoundingClientRect().top + scrollY - headerH()));
 }
 
 /** Rola até o formulário de forma robusta: recalcula o alvo a cada frame (imagens lazy, refresh do ScrollTrigger e
@@ -64,7 +66,7 @@ export function initCta() {
     const a = e.target.closest('[data-cta]');
     if (!a) return;
     e.preventDefault();
-    const position = a.closest('#cta-fixed') ? 'sticky' : a.closest('#topbar') ? 'header' : 'inline';
+    const position = a.closest('#cta-fixed') ? 'sticky' : a.closest('#site-header') ? 'header' : 'inline';
     track('cta_click', { location: a.dataset.trackLocation || 'unknown', label: (a.textContent || '').trim(), position });
     scrollToForm();
   });
@@ -72,19 +74,19 @@ export function initCta() {
   initBars();
 }
 
-/** Barra fixa inferior (mobile) e topbar (desktop): entram depois do CTA da hero;
+/** Barra fixa inferior (mobile): entra depois do CTA da hero;
  *  saem no formulário, no CTA final e com teclado aberto. */
 function initBars() {
-  const bar = $('#cta-fixed'), top = $('#topbar');
+  const bar = $('#cta-fixed');
   const hero = $('#cta-hero'), form = $('#formulario'), fin = $('#cta-final');
   if (!hero || !form || !fin) return;
   const st = { passed: false, form: false, fin: false };
   const inline = new Set(); // CTAs inline visíveis: a barra fixa some para não duplicar o botão
   const apply = () => {
     const on = st.passed && !st.form && !st.fin && !kbdOpen;
-    [bar, top].forEach((el) => {
+    [bar].forEach((el) => {
       if (!el) return;
-      const vis = el === bar ? on && inline.size === 0 : on;
+      const vis = on && inline.size === 0;
       el.classList.toggle('is-on', vis);
       el.setAttribute('aria-hidden', vis ? 'false' : 'true');
       el.toggleAttribute('inert', !vis);

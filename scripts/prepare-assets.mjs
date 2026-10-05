@@ -18,7 +18,7 @@ const EXTRA_IMAGES = [
   'nil-cartazes-feminino-moderno',
 ];
 const galItems = CASES.flatMap((c) => c.items);
-export const USED_IMAGES = [...new Set([...EXTRA_IMAGES, ...galItems.filter((i) => i.kind === 'img').map((i) => i.id)])];
+export const USED_IMAGES = [...new Set([...EXTRA_IMAGES, ...galItems.filter((i) => i.kind === 'img' && !i.local).map((i) => i.id)])];
 const USED_VIDEOS = [...new Set(galItems.filter((i) => i.kind === 'video').map((i) => i.id))];
 const MAXW = 1200;
 

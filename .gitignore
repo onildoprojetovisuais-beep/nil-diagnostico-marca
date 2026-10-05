@@ -6,3 +6,5 @@ _planning/
 
 .vercel
 .env*
+
+!.env.example

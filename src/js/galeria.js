@@ -3,6 +3,7 @@ import { CASES, WIDTHS } from '../data/cases.js';
 
 // import.meta.glob tolera módulo ausente (dev paralelo): vira {} em vez de erro de resolução
 const MODS = import.meta.glob(['./galeria-scroll.js', './galeria-lightbox.js']);
+const ARROW = '<svg class="cta__seta" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 export const getCases = () => CASES;
 
@@ -27,7 +28,7 @@ function media(it, cs, idx, eager) {
     return `<picture class="pic"><img src="/galeria/ph/${cs.id}-${pad(idx + 1)}.svg" alt="" ${dims} ${load} decoding="async"></picture>`;
   }
   if (it.kind === 'video') {
-    return `<picture class="pic pic--video foto"><img src="/video/${it.id}-poster.webp" alt="${esc(it.alt)}" ${dims} ${load} decoding="async">${PLAY}</picture>`;
+    return `<picture class="pic pic--video foto"><img src="/video/${it.id}-poster.webp" alt="${esc(it.alt || `${cs.nome}, imagem ${idx + 1}`)}" ${dims} ${load} decoding="async">${PLAY}</picture>`;
   }
   const sizes = SIZES[it.size] || SIZES.m;
   const jpgWs = WIDTHS.filter((w) => w <= 800);
@@ -35,27 +36,29 @@ function media(it, cs, idx, eager) {
   return `<picture class="pic ${it.cor ? 'foto--cor' : 'foto'}">` +
     `<source type="image/avif" srcset="${srcset(it.id, 'avif', WIDTHS)}" sizes="${sizes}">` +
     `<source type="image/webp" srcset="${srcset(it.id, 'webp', WIDTHS)}" sizes="${sizes}">` +
-    `<img src="/img/${it.id}-800.jpg" srcset="${srcset(it.id, 'jpg', jpgWs)}" sizes="${sizes}" alt="${esc(it.alt)}" ${dims} ${load} decoding="async"${pos}>` +
+    `<img src="/img/${it.id}-800.jpg" srcset="${srcset(it.id, 'jpg', jpgWs)}" sizes="${sizes}" alt="${esc(it.alt || `${cs.nome}, imagem ${idx + 1}`)}" ${dims} ${load} decoding="async"${pos}>` +
     `</picture>`;
 }
 
 function renderItem(it, cs, idx, ci) {
   const total = cs.items.length;
   const eager = ci === 0 && idx < 2;
-  const cap = it.kind === 'ph' ? cs.nome : (it.caption || '');
+  const cap = it.caption || '';
   const mira = it.size === 'hero' || it.size === 'l' ? ' mira' : '';
   const label = `Abrir galeria de ${cs.nome}, ${it.kind === 'video' ? 'vídeo' : 'imagem'} ${idx + 1} de ${total}`;
-  return `<li class="gal__item gal__item--${it.size} gal__lift--${it.lift}" data-index="${idx}" style="--ar:${(it.w / it.h).toFixed(4)}">` +
+  return `<li class="gal__item gal__item--${it.size} gal__lift--${it.lift}" data-index="${idx}" style="--i:${idx};--par:${idx % 2 ? 1 : -1};--ar:${(it.w / it.h).toFixed(4)}">` +
     `<button type="button" class="gal__btn${mira}" data-case="${esc(cs.id)}" data-index="${idx}" aria-haspopup="dialog" aria-label="${esc(label)}">${media(it, cs, idx, eager)}</button>` +
-    `<span class="gal__cap label label--plain">[ ${pad(idx + 1)} — ${esc(cap)} ]</span></li>`;
+    `<span class="gal__cap label label--plain">[ ${pad(idx + 1)}${cap ? ' — ' + esc(cap) : ''} ]</span></li>`;
 }
 
 function renderCase(cs, ci) {
   const dir = ci % 2 === 0 ? 'rtl' : 'ltr';
   const desc = cs.desc ? `<p class="gal__desc">${esc(cs.desc)}</p>` : '';
-  return `<section class="gal__case" data-case="${esc(cs.id)}" data-dir="${dir}" data-i="${ci}" aria-label="${esc(cs.nome)}">` +
-    `<header class="gal__meta"><h3 class="gal__title">${esc(cs.nome)}</h3>${desc}<span class="gal__count label label--plain">${pad(ci + 1)} / ${pad(CASES.length)}</span></header>` +
-    `<ul class="gal__track" aria-label="${esc(cs.nome)}: trilha de imagens">${cs.items.map((it, i) => renderItem(it, cs, i, ci)).join('')}</ul></section>`;
+  const shown = cs.items.slice(0, cs.preview || cs.items.length);
+  const more = `<button type="button" class="gal__more" data-case="${esc(cs.id)}" data-index="0" aria-haspopup="dialog">Ver projeto · ${cs.items.length} imagens ${ARROW}</button>`;
+  return `<section class="gal__case${cs.featured ? ' gal__case--feat' : ''}" data-case="${esc(cs.id)}" data-dir="${dir}" data-i="${ci}" aria-label="${esc(cs.nome)}">` +
+    `<header class="gal__meta"><span class="gal__count label label--plain">${pad(ci + 1)} / ${pad(CASES.length)}${cs.featured ? ' — Destaque' : ''}</span><h3 class="gal__title">${esc(cs.nome)}</h3>${desc}${more}</header>` +
+    `<ul class="gal__track" aria-label="${esc(cs.nome)}: trilha de imagens">${shown.map((it, i) => renderItem(it, cs, i, ci)).join('')}</ul></section>`;
 }
 
 export async function initGaleria() {

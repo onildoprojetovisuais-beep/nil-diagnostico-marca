@@ -12,6 +12,23 @@ export function initSinais() {
   // imagens do item 02 carregam já, para o acordeão abrir sem salto
   run.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
 
+  // número: contorno → preenchido, guiado pela rolagem dentro da etapa e suavizado (lerp) para soar orgânico
+  const nums = items.map((li) => li.querySelector('.sinal__num'));
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let fillNow = 0, fillTo = 0, fillRaf = 0;
+  const paintFill = () => { const n = nums[active]; if (n) n.style.setProperty('--fill', fillNow.toFixed(3)); };
+  function fillTick() {
+    fillNow += (fillTo - fillNow) * 0.09;
+    if (Math.abs(fillTo - fillNow) < 0.002) { fillNow = fillTo; fillRaf = 0; } else fillRaf = requestAnimationFrame(fillTick);
+    paintFill();
+  }
+  const ease = (t) => t * t * (3 - 2 * t);
+  function setFillTarget(S, snap) {
+    const f = prog(S) - active;
+    fillTo = calm ? 1 : ease(Math.max(0, Math.min(1, (f - 0.08) / 0.5)));
+    if (snap || calm) { fillNow = fillTo; paintFill(); } else if (!fillRaf) fillRaf = requestAnimationFrame(fillTick);
+  }
+
   let vh = innerHeight, vw = innerWidth, stageH = 0, step = 0, k0 = 0, s0 = 0, active = -1, raf = 0;
   const scrolled = () => -run.getBoundingClientRect().top;
   const pinStart = (h) => Math.max(0, h - vh);
@@ -27,6 +44,7 @@ export function initSinais() {
   function setActive(a) {
     if (a === active) return;
     active = a;
+    nums.forEach((n, i) => { if (n && i !== a) n.style.setProperty('--fill', '0'); });
     rows.forEach((r, i) => {
       r.li.classList.toggle('is-past', i < a);
       r.li.classList.toggle('is-on', i === a);
@@ -53,7 +71,9 @@ export function initSinais() {
   function update() {
     raf = 0;
     const S = scrolled();
+    const prev = active;
     setActive(Math.max(0, Math.min(n - 1, Math.floor(prog(S) + 1e-6))));
+    setFillTarget(S, prev !== active);
     if (idxWrap) { const r = run.getBoundingClientRect(); idxWrap.classList.toggle('is-vis', r.top < vh * 0.5 && r.bottom > vh * 0.5); }
   }
   const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };

@@ -19,7 +19,7 @@ const caseById = (id) => CASES.find((c) => c.id === id);
 const phSrc = (cs, i) => `/galeria/ph/${cs.id}-${pad(i + 1)}.svg`;
 
 function pictureHtml(it, cs, i, thumb = false) {
-  const alt = thumb ? '' : it.kind === 'ph' ? `Espaço reservado: ${cs.nome}, imagem ${pad(i + 1)}` : it.alt || '';
+  const alt = thumb ? '' : it.alt || `${cs.nome}, imagem ${i + 1}`;
   if (it.kind === 'ph') return `<img src="${phSrc(cs, i)}" alt="${esc(alt)}" width="${it.w}" height="${it.h}" decoding="async">`;
   if (it.kind === 'video') return `<picture class="foto"><img src="/video/${it.id}-poster.webp" alt="${esc(alt)}" width="${it.w}" height="${it.h}" decoding="async"></picture>`;
   const sizes = thumb ? '64px' : '100vw';
@@ -171,7 +171,7 @@ export function initLightbox(root) {
   if (!root || bound === root) return;
   bound = root;
   root.addEventListener('click', (e) => {
-    const b = e.target.closest('.gal__btn'); if (!b || !root.contains(b)) return;
+    const b = e.target.closest('[data-case][data-index]'); if (!b || !root.contains(b)) return;
     e.preventDefault();
     openLightbox(b.dataset.case, +b.dataset.index || 0, b);
   });

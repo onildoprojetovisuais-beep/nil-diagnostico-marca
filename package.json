@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "assets": "node scripts/prepare-assets.mjs",
+    "cases": "node scripts/prepare-cases.mjs",
     "placeholders": "node scripts/make-placeholders.mjs"
   },
   "dependencies": {

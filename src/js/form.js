@@ -64,6 +64,12 @@ export function initForm() {
   if (!form) return;
   const status = $('#form-status'), errEnvio = $('#form-erro-envio'), btn = $('#form-submit'), progress = $('#form-progress');
   const startedAt = { t: 0 };
+  // Política de Privacidade: o link só aparece quando CONFIG.PRIVACY_URL estiver preenchido
+  const lgpd = $('.nota--lgpd', form);
+  if (CONFIG.PRIVACY_URL && lgpd) {
+    const a = document.createElement('a'); a.href = CONFIG.PRIVACY_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Política de Privacidade';
+    lgpd.append(' ', a, '.');
+  }
   let sending = false, done = false;
 
   const el = {
@@ -162,6 +168,7 @@ export function initForm() {
     return {
       ...u,
       whatsapp_e164: payloadDigits ? '+55' + payloadDigits : '',
+      landing_page: CONFIG.LANDING_PAGE,
       page_url: location.href.split('#')[0],
       referrer: document.referrer || '',
       submitted_at: new Date().toISOString(),
@@ -186,6 +193,7 @@ export function initForm() {
     if (bad.length) {
       status.textContent = MSG.resumo(bad.length);
       track('form_validation_error', { fields: bad });
+      track('form_error', { type: 'validation', fields: bad });
       const first = bad[0] === 'situacao' ? el.situacao[0] : el[bad[0]];
       first.focus({ preventScroll: true });
       first.scrollIntoView({ block: 'center', behavior: 'smooth' });
@@ -225,6 +233,7 @@ export function initForm() {
     } catch (err) {
       const reason = err.reason || 'network';
       track('form_submit_error', { reason });
+      track('form_error', { type: 'submit', reason });
       errEnvio.textContent = reason === 'endpoint_missing' ? MSG.erroConfig : MSG.erroEnvio;
       const w = buildWhatsLink(data);
       if (w) { errEnvio.append(' '); const a = document.createElement('a'); a.href = w; a.rel = 'noopener'; a.textContent = MSG.whats; errEnvio.append(a); }
