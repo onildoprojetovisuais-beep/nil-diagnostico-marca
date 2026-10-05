@@ -17,7 +17,9 @@ const SIZES = {
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const pad = (n) => String(n).padStart(2, '0');
-const srcset = (id, ext, ws) => ws.map((w) => `/img/${id}-${w}.${ext} ${w}w`).join(', ');
+// it.v (cases.js) = versão da imagem: troque ao substituir a foto, pois /img/ é cache immutable
+const ver = (it) => (it.v ? `?v=${it.v}` : '');
+const srcset = (it, ext, ws) => ws.map((w) => `/img/${it.id}-${w}.${ext}${ver(it)} ${w}w`).join(', ');
 
 const PLAY = '<svg class="gal__play" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="rgba(17,18,20,.62)" stroke="#F1F2EE" stroke-width="1.5"/><path d="M19 15.5v17l14-8.5z" fill="#F1F2EE"/></svg>';
 
@@ -34,9 +36,9 @@ function media(it, cs, idx, eager) {
   const jpgWs = WIDTHS.filter((w) => w <= 800);
   const pos = it.focal ? ` style="object-position:${esc(it.focal)}"` : '';
   return `<picture class="pic ${it.cor ? 'foto--cor' : 'foto'}">` +
-    `<source type="image/avif" srcset="${srcset(it.id, 'avif', WIDTHS)}" sizes="${sizes}">` +
-    `<source type="image/webp" srcset="${srcset(it.id, 'webp', WIDTHS)}" sizes="${sizes}">` +
-    `<img src="/img/${it.id}-800.jpg" srcset="${srcset(it.id, 'jpg', jpgWs)}" sizes="${sizes}" alt="${esc(it.alt || `${cs.nome}, imagem ${idx + 1}`)}" ${dims} ${load} decoding="async"${pos}>` +
+    `<source type="image/avif" srcset="${srcset(it, 'avif', WIDTHS)}" sizes="${sizes}">` +
+    `<source type="image/webp" srcset="${srcset(it, 'webp', WIDTHS)}" sizes="${sizes}">` +
+    `<img src="/img/${it.id}-800.jpg${ver(it)}" srcset="${srcset(it, 'jpg', jpgWs)}" sizes="${sizes}" alt="${esc(it.alt || `${cs.nome}, imagem ${idx + 1}`)}" ${dims} ${load} decoding="async"${pos}>` +
     `</picture>`;
 }
 

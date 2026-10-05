@@ -18,7 +18,7 @@ export const CASES = [
       img('c-armi-sala', 'armi-sala.png', W, 'l', 'top'),
       img('c-armi-palco', 'armi-palco.png', L, 'm', 'low'),
       img('c-armi-tela', 'armi-tela.png', L, 'l', 'mid'),
-      img('c-armi-caneca', 'armi-caneca.png', P, 's', 'top'),
+      { ...img('c-armi-caneca', 'armi-caneca.png', P, 's', 'top'), v: 2 },
       img('c-armi-fita-cracha', 'armi-fita-cracha.png', L, 'm', 'low'),
     ],
   },

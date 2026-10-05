@@ -5,7 +5,9 @@ import { CASES, WIDTHS } from '../data/cases.js';
 
 const pad = (n) => String(n).padStart(2, '0');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const srcset = (id, ext, ws) => ws.map((w) => `/img/${id}-${w}.${ext} ${w}w`).join(', ');
+// it.v (cases.js) = versão da imagem: troque ao substituir a foto, pois /img/ é cache immutable
+const ver = (it) => (it.v ? `?v=${it.v}` : '');
+const srcset = (it, ext, ws) => ws.map((w) => `/img/${it.id}-${w}.${ext}${ver(it)} ${w}w`).join(', ');
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
@@ -24,8 +26,8 @@ function pictureHtml(it, cs, i, thumb = false) {
   if (it.kind === 'video') return `<picture class="foto"><img src="/video/${it.id}-poster.webp" alt="${esc(alt)}" width="${it.w}" height="${it.h}" decoding="async"></picture>`;
   const sizes = thumb ? '64px' : '100vw';
   const ws = thumb ? [480] : WIDTHS;
-  return `<picture class="${it.cor ? 'foto--cor' : 'foto'}"><source type="image/avif" srcset="${srcset(it.id, 'avif', ws)}" sizes="${sizes}"><source type="image/webp" srcset="${srcset(it.id, 'webp', ws)}" sizes="${sizes}">` +
-    `<img src="/img/${it.id}-800.jpg" alt="${esc(alt)}" width="${it.w}" height="${it.h}" decoding="async"></picture>`;
+  return `<picture class="${it.cor ? 'foto--cor' : 'foto'}"><source type="image/avif" srcset="${srcset(it, 'avif', ws)}" sizes="${sizes}"><source type="image/webp" srcset="${srcset(it, 'webp', ws)}" sizes="${sizes}">` +
+    `<img src="/img/${it.id}-800.jpg${ver(it)}" alt="${esc(alt)}" width="${it.w}" height="${it.h}" decoding="async"></picture>`;
 }
 
 function build() {
